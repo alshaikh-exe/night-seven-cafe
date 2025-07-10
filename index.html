@@ -8,21 +8,29 @@
    <script defer src="/js/app.js"></script>
 </head>
 <body>
-   <h1 id="title">Night 1</h1>
-   <h2 id="scoreboard">Goal: 8/10</h2>
-   <div class="general-btns-container">
+    <!-- General Functional Buttons -->
+     <div class="container"> 
+        <div class="top-segment">
+    <div class="general-btns-container">
     <div id="exit-btn-container">
     <button id="exit">EXIT</button>
     </div>
     <div id="reset-btn-container">
     <button id="reset">RESET</button>
     </div> 
+    </div>
+     <!-- Main Game Trackers -->
+   <h1 id="title">Night 1</h1>
+   <h2 id="goal">Goal: 8/10</h2>
    </div>
+     <!-- Ingredients List -->
+      <div class="flexbox">
+         <div class="left">
    <div class="ingredients-list">
        <div id="milk-container">
            <button class="ingredient" id="milk">milk</button>
        </div>
-        <div id="oat-milk container">
+        <div id="oat-milk-container">
            <button class="ingredient" id="oat milk">oat milk</button>
        </div>
         <div id="black-tea-container">
@@ -74,6 +82,17 @@
            <button class="ingredient" id="matcha">matcha</button>
        </div>
    </div>
+   </div>
+   <!-- Customers & Orders -->
+    <div class="middle-segment">
+    <div class="customer-display-container">
+        <div id="customer-container">
+        <div id="customer">customer</div>
+        </div>
+        <div id="dialogue-container">
+        <div id="dialogue">dialogue</div>
+        </div>
+        <!-- Mixing Station -->
    <div class="mixing-station-container">
         <div id="first-slot-container">
        <div id="first-slot">slot 1</div>
@@ -90,6 +109,7 @@
        <div id="drink-slot-container">
        <div id="drink-slot">drink</div>
        </div>
+       <!-- Mixing Station Buttons -->
        <div class="mixing-station-btns-container">
            <div id="mix-btn-container">
                <button id="mix-btn">MIX</button>
@@ -101,17 +121,23 @@
             <button id="serve-btn">SERVE</button>
            </div>
        </div>
+       </div>
+       </div>
    </div>
+   <!-- Game Difficulty Indicator Bars -->
+    <div class="right-segment">
    <div class="modifier-bars-container">
     <div id="energy-bar">Energy</div>
     <div id="charm-bar">Charm</div>
     <div id="intuition-bar">Intuition</div>
    </div>
+   <!-- Recipe Guide Dropdown -->
     <div class="recipe-dropdown-container">
         <div id="drink-ingredients">content</div>
         <div id="drink-icon-container">
         <div id="drink-ingredients-icon"></div>
         </div>
+        <!-- Recipe Guide Dropdown Buttons -->
         <div class="dropdown-page-btns-container">
         <div id="previous-btn-container">
             <button id="previous">previous</button>
@@ -121,13 +147,9 @@
         </div>
         </div>
     </div>
-    <div class="customer-display-container">
-        <div id="customer-container">
-        <div id="customer">customer</div>
-        </div>
-        <div id="dialogue-container">
-        <div id="dialogue">dialogue</div>
-        </div>
+    </div>
+    </div>
+    </div>
     </div>
 </body>
 </html>
