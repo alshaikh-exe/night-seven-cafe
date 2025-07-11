@@ -39,8 +39,7 @@
 .right-segment {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     height: 100%;
     width: 25%;
     background: green;
@@ -201,6 +200,105 @@ body {
     background-color: white; 
     z-index: 2; /* layer */
 }
+
+/* Game modifier bars */
+.modifier-bars-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+.bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin: 4px;
+}
+
+.bar-block {
+    width: 30px;
+    height: 20px;
+    border: 2px dashed white;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.energy-bar-filled {
+    background-color: #e8d717;
+}
+
+.charm-bar-filled {
+    background-color: #ee4920;
+}
+
+
+.intuition-bar-filled {
+    background-color: rgb(175, 94, 175);
+}
+
+.bar-empty {
+    background-color: transparent;
+}
+
+/* Dropdown recipe guide */
+.recipe-dropdown-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding: 20px;
+    gap: 12px;
+    border-radius: 20px;
+    background-color: rgb(215, 214, 214);
+    text-align: center;
+    margin: 20px auto 20px auto;
+    box-sizing: border-box;
+}
+
+.dropdown-drink-name {
+    margin: 10px auto 10px auto;
+}
+
+.drink-description {
+    margin: 10px auto 10px auto;
+}
+
+.dropdown-drink-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 40%;
+    margin: 10px auto 10px auto;
+    background-color: orange;
+    border-radius: 16px;
+}
+
+.page-selectors {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 10px;
+}
+
+#previous, #next {
+    padding: 5px 8px;
+    font-size: 10px;
+}
+
+
+
 
 
 
