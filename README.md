@@ -33,4 +33,5 @@ Survive seven nights, serve your customers and uncover the truth behind it all o
 3. Survive the seven nights!
 
 ## Credits/References
-Game concept and code by: Abdulla Alshaikh
+- Game concept and code by: Abdulla Alshaikh
+
