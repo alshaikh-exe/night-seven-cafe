@@ -26,11 +26,89 @@ const drinks = [
     }
 ];
 
+const customers = [
+    {
+        name: "Zoe",
+        mood: "happy",
+        type: "person",
+        drink: "Honey Bloom",
+        lowIntuition: "...",
+        medIntuition: "I don't want this to end!",
+        highIntuition: "I'm in the best mood today!",
+        success: "Let's keep spreading the kindess!",
+        fail: "Isn't that a buzzkill..."
+    },
+    {
+        name: "Alex",
+        mood: "sad",
+        type: "person",
+        drink: "Lavender Rain",
+        lowIntuition: "...",
+        medIntuition: "Everything feels a bit... dim.",
+        highIntuition: "I feel so down.",
+        success: "That's exactly what I needed.",
+        fail: "It didn't reach me."
+    },
+    {
+        name: "Quinn",
+        mood: "angry",
+        type: "person",
+        drink: "Ember Shot",
+        lowIntuition: "...",
+        medIntuition: "Everything's going wrong!",
+        highIntuition: "I'm furious and I don't know what to do with it!",
+        success: "That hit like fire in my chest.",
+        fail: "Pfft, You call this a shot?"
+    },
+    {
+        name: "Jack",
+        mood: "fearful",
+        type: "person",
+        drink: "Dream Fog",
+        lowIntuition: "...",
+        medIntuition: "It's been hard to breathe lately.",
+        highIntuition: "I'm feelin anxious and I need to relax.",
+        success: "That calmed my nerves!",
+        fail: "It made it worse."
+    },
+    {
+        name: "Jessica",
+        mood: "disgusted",
+        type: "person",
+        drink: "Mint Revival",
+        lowIntuition: "...",
+        medIntuition: "Everything is just so... ugh.",
+        highIntuition: "I need to feel like a bubble bath.",
+        success: "Just Right!",
+        fail: "I think I'm going to be sick..."
+    },
+    {
+        name: "Ryan",
+        mood: "surprised",
+        type: "person",
+        drink: "Honey Bloom",
+        lowIntuition: "...",
+        medIntuition: "Today's been interesting to say the least.",
+        highIntuition: "Throw something wild at me I'm here for it!",
+        success: "Whoa... I didn't see that coming.",
+        fail: "That was boring."
+    }
+];
+
+
 
 /*-------------------------------- Variables --------------------------------*/
 let currentMixingIngredients = [];
+
 let drinkReady = false;
 
+let points= 0;
+
+let night= 1;
+
+let randomIndex = Math.floor(Math.random() * customers.length);
+
+let currentCustomer = customers[randomIndex];
 
 /*------------------------ Cached Element References ------------------------*/
 const mixingIngredients = document.querySelectorAll(".mixing-slot");
@@ -44,6 +122,12 @@ const serveButton = document.querySelector("#serve-btn");
 const ingredients = document.querySelectorAll(".ingredient");
 
 const drinkSlot = document.querySelector("#drink-slot");
+
+const customer = document.querySelector("#customer");
+
+const customerName = document.querySelector("#customer-name");
+
+const dialogue = document.querySelector("#dialogue");
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -100,7 +184,7 @@ function handleMix() {
         mixingIngredients[i].innerText= "";
     }
     currentMixingIngredients = [];
-}
+};
 
 function handleClear() {
     currentMixingIngredients = [];
@@ -109,19 +193,29 @@ function handleClear() {
     }
     drinkSlot.innerText= "";
     drinkReady = false;
-}
+};
 
 function handleServe() {
     drinkName = drinkSlot.innerText;
     if (!drinkReady) {
         console.log("You need to mix the drink first!");
+        return;
     } 
+
+    if (drinkName === currentCustomer.drink) {
+        dialogue.innerText = currentCustomer.success;
+        console.log(`You served a ${drinkName} which is the right drink!`);
+    }
+
     else {
-        console.log(`You served the customer a ${drinkName}!`);
-        drinkReady = false;
-        handleClear();
+        dialogue.innerText = currentCustomer.fail;
+        console.log(`You served the customer a ${drinkName} which is the wrong drink!`);
     }
-    }
+
+    drinkReady = false;
+    handleClear();
+    displayNewCustomer();
+    };
 
 function previewDrink() {
     const sortedCurrentMixingIngredients = [...currentMixingIngredients].sort();
@@ -137,8 +231,19 @@ function previewDrink() {
     }
     
     drinkSlot.innerText = "Mystery Drink";
+};
 
-}
+function displayCustomer() {
+    customerName.innerText = currentCustomer.name;
+    dialogue.innerText = currentCustomer.highIntuition;
+};
 
+function displayNewCustomer() {
+    randomIndex = Math.floor(Math.random() * customers.length);
+    currentCustomer = customers[randomIndex];
+    displayCustomer();
+};
+
+displayCustomer();
 
 

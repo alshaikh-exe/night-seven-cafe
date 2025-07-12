@@ -266,10 +266,12 @@ body {
 
 .dropdown-drink-name {
     margin: 10px auto 10px auto;
+    border: 2px solid white;
 }
 
 .drink-description {
     margin: 10px auto 10px auto;
+    border: 2px solid white;
 }
 
 .dropdown-drink-icon {
@@ -281,6 +283,7 @@ body {
     border-radius: 40%;
     margin: 10px auto 10px auto;
     background-color: orange;
+    border: 2px solid black;
     border-radius: 16px;
 }
 
