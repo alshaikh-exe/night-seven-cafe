@@ -118,9 +118,9 @@ function handleServe() {
     } 
     else {
         console.log(`You served the customer a ${drinkName}!`);
+        drinkReady = false;
+        handleClear();
     }
-    drinkReady = false;
-    handleClear();
     }
 
 function previewDrink() {
@@ -134,11 +134,11 @@ function previewDrink() {
             drinkSlot.innerText = drink.name;
             return;
         }
-        else {
-            drinkSlot.innerText = "Mystery Drink";
-            return;
-        }
     }
+    
+    drinkSlot.innerText = "Mystery Drink";
+
 }
+
 
 
