@@ -209,7 +209,21 @@ body {
     padding: 20px;
 }
 
-.bar {
+.energy-bar-blocks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.charm-bar-blocks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.intuition-bar-blocks {
     display: flex;
     flex-direction: row;
     justify-content: center;

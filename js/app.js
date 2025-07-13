@@ -102,11 +102,19 @@ let currentMixingIngredients = [];
 
 let drinkReady = false;
 
-let points= 0;
-
 let night= 1;
 
+let points= 0;
+
+let energy = 0;
+
+let charm = 0;
+
+let intuition = 0;
+
 let randomIndex = Math.floor(Math.random() * customers.length);
+
+let randomNumber = Math.floor((Math.random() * 6) + 1);
 
 let currentCustomer = customers[randomIndex];
 
@@ -128,6 +136,12 @@ const customer = document.querySelector("#customer");
 const customerName = document.querySelector("#customer-name");
 
 const dialogue = document.querySelector("#dialogue");
+
+const energyBar = document.querySelector(".energy-bar-blocks");
+
+const charmBar = document.querySelector(".charm-bar-blocks");
+
+const intuitionBar = document.querySelector(".intuition-bar-blocks");
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -244,6 +258,98 @@ function displayNewCustomer() {
     displayCustomer();
 };
 
+function rollDice() {
+
+energy = Math.floor((Math.random() * 6) + 1);
+
+
+if (energy === 1 || energy === 2) {
+    energyBar.innerHTML= `
+            <div class="bar-block energy-bar-filled"></div>
+            <div class="bar-block energy-bar-empty"></div> 
+            <div class="bar-block energy-bar-empty"></div>
+            `;
+}
+
+else if (energy === 3 || energy === 4) {
+    energyBar.innerHTML= `
+            <div class="bar-block energy-bar-filled"></div>
+            <div class="bar-block energy-bar-filled"></div> 
+            <div class="bar-block energy-bar-empty"></div>
+            `;
+}
+
+else if (energy === 5 || energy === 6) {
+    energyBar.innerHTML= `
+            <div class="bar-block energy-bar-filled"></div>
+            <div class="bar-block energy-bar-filled"></div> 
+            <div class="bar-block energy-bar-filled"></div>
+            `;
+}
+
+charm = Math.floor((Math.random() * 6) + 1);
+
+if (charm === 1 || charm === 2) {
+    charmBar.innerHTML= `
+            <div class="bar-block charm-bar-filled"></div>
+            <div class="bar-block charm-bar-empty"></div> 
+            <div class="bar-block charm-bar-empty"></div>
+            `;
+}
+
+else if (charm === 3 || charm === 4) {
+    charmBar.innerHTML= `
+            <div class="bar-block charm-bar-filled"></div>
+            <div class="bar-block charm-bar-filled"></div> 
+            <div class="bar-block charm-bar-empty"></div>
+            `;
+}
+
+else if (charm === 5 || charm === 6) {
+    charmBar.innerHTML= `
+            <div class="bar-block charm-bar-filled"></div>
+            <div class="bar-block charm-bar-filled"></div> 
+            <div class="bar-block charm-bar-filled"></div>
+            `;
+}
+
+intuition  = Math.floor((Math.random() * 6) + 1);
+
+if (intuition === 1 || intuition === 2) {
+    intuitionBar.innerHTML= `
+            <div class="bar-block intuition-bar-filled"></div>
+            <div class="bar-block intuition-bar-empty"></div> 
+            <div class="bar-block intuition-bar-empty"></div>
+            `
+            return;
+}
+
+else if (intuition === 3 || intuition === 4) {
+    intuitionBar.innerHTML= `
+            <div class="bar-block intuition-bar-filled"></div>
+            <div class="bar-block intuition-bar-filled"></div> 
+            <div class="bar-block intuition-bar-empty"></div>
+            `
+            return;
+}
+
+else if (intuition === 5 || intuition === 6) {
+    intuitionBar.innerHTML= `
+            <div class="bar-block intuition-bar-filled"></div>
+            <div class="bar-block intuition-bar-filled"></div> 
+            <div class="bar-block intuition-bar-filled"></div>
+            `;
+            return;
+}
+
+}
+
+rollDice();
+console.log(`You rolled a ${energy} for energy!`);
+console.log(`You rolled a ${charm} for charm!`);
+console.log(`You rolled a ${intuition} for intuition!`);
+
 displayCustomer();
+
 
 
