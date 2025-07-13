@@ -67,7 +67,7 @@ const customers = [
         drink: "Dream Fog",
         lowIntuition: "...",
         medIntuition: "It's been hard to breathe lately.",
-        highIntuition: "I'm feelin anxious and I need to relax.",
+        highIntuition: "I'm feeling anxious and I need to relax.",
         success: "That calmed my nerves!",
         fail: "It made it worse."
     },
@@ -86,7 +86,7 @@ const customers = [
         name: "Ryan",
         mood: "surprised",
         type: "person",
-        drink: "Honey Bloom",
+        drink: "Stardust Cloud",
         lowIntuition: "...",
         medIntuition: "Today's been interesting to say the least.",
         highIntuition: "Throw something wild at me I'm here for it!",
@@ -135,15 +135,20 @@ const drinkGuide = [
 ];
 
 
-
 /*-------------------------------- Variables --------------------------------*/
 let currentMixingIngredients = [];
 
 let drinkReady = false;
 
-let night= 1;
+let night = 1;
 
-let points= 0;
+let points = 0;
+
+let customersLeft = 0;
+
+let maxNights = 7;
+
+let pointsRequired = [5, 6, 7, 8, 9, 12, 15];
 
 let energy = 0;
 
@@ -160,6 +165,10 @@ let currentCustomer = customers[randomIndex];
 let currentIndex = 0;
 
 /*------------------------ Cached Element References ------------------------*/
+const currentNight = document.querySelector("#title");
+
+const currentGoal = document.querySelector("#goal");
+
 const mixingIngredients = document.querySelectorAll(".mixing-slot");
 
 const mixingButton = document.querySelector("#mix-btn");
@@ -216,7 +225,6 @@ ingredients.forEach((ingredient) => {
             previewDrink();
         }
 
-        console.log(`added: ${ingredientName}`);
         console.log(`current mix: ${currentMixingIngredients}`);
     });
 });
@@ -230,6 +238,21 @@ serveButton.addEventListener("click", handleServe);
 
 
 /*-------------------------------- Functions --------------------------------*/
+function startNight() {
+    rollDice();
+    displayNightProgress();
+    displayNewCustomer();
+
+    console.log(`You rolled a ${energy} for energy!`);
+    console.log(`You rolled a ${charm} for charm!`);
+    console.log(`You rolled a ${intuition} for intuition!`);
+}
+
+function displayNightProgress() {
+    currentNight.innerText = `Night: ${night}`;
+    currentGoal.innerText = `Goal: ${points}/${pointsRequired[night -1]}`;
+}
+
 function handleMix() {
     const sortedCurrentMixingIngredients = [...currentMixingIngredients].sort();
 
@@ -270,6 +293,17 @@ function handleServe() {
     } 
 
     if (drinkName === currentCustomer.drink) {
+        if (charm < 4)
+        {
+            points += 1;
+        }
+        else if (charm >= 4 && charm <= 6) {
+            points += 2;
+        }
+        else {
+            points += 3;
+        }
+
         dialogue.innerText = currentCustomer.success;
         console.log(`You served a ${drinkName} which is the right drink!`);
     }
@@ -279,10 +313,17 @@ function handleServe() {
         console.log(`You served the customer a ${drinkName} which is the wrong drink!`);
     }
 
+    customersLeft--;
+    displayNightProgress();
     drinkReady = false;
     handleClear();
-    displayNewCustomer();
-    };
+    if (customersLeft > 0) {
+        displayNewCustomer();
+    }
+    else {
+        checkNightStatus();
+    }
+};
 
 function previewDrink() {
     const sortedCurrentMixingIngredients = [...currentMixingIngredients].sort();
@@ -302,7 +343,18 @@ function previewDrink() {
 
 function displayCustomer() {
     customerName.innerText = currentCustomer.name;
-    dialogue.innerText = currentCustomer.highIntuition;
+    if (customersLeft > 0) {
+        if (intuition <=3) {
+            dialogue.innerText = currentCustomer.lowIntuition;
+        }
+        else if (intuition >= 4 && intuition < 6) {
+            dialogue.innerText = currentCustomer.medIntuition;
+        }
+        else {
+            dialogue.innerText = currentCustomer.highIntuition;
+        }
+    }
+    
 };
 
 function displayNewCustomer() {
@@ -315,33 +367,36 @@ function rollDice() {
 
 energy = Math.floor((Math.random() * 6) + 1);
 
-    if (energy === 1 || energy === 2) {
+    if (energy <= 3) {
         energyBar.innerHTML= `
             <div class="bar-block energy-bar-filled"></div>
             <div class="bar-block energy-bar-empty"></div> 
             <div class="bar-block energy-bar-empty"></div>
             `;
+        customersLeft = 5;
     }       
 
-    else if (energy === 3 || energy === 4) {
+    else if (energy >= 4 && energy < 6) {
     energyBar.innerHTML= `
             <div class="bar-block energy-bar-filled"></div>
             <div class="bar-block energy-bar-filled"></div> 
             <div class="bar-block energy-bar-empty"></div>
             `;
+        customersLeft = 7;
     }
 
-    else if (energy === 5 || energy === 6) {
+    else if (energy === 6) {
     energyBar.innerHTML= `
             <div class="bar-block energy-bar-filled"></div>
             <div class="bar-block energy-bar-filled"></div> 
             <div class="bar-block energy-bar-filled"></div>
             `;
+        customersLeft = 9;
     }
 
 charm = Math.floor((Math.random() * 6) + 1);
 
-    if (charm === 1 || charm === 2) {
+    if (charm <= 3) {
     charmBar.innerHTML= `
             <div class="bar-block charm-bar-filled"></div>
             <div class="bar-block charm-bar-empty"></div> 
@@ -349,7 +404,7 @@ charm = Math.floor((Math.random() * 6) + 1);
             `;
     }
 
-    else if (charm === 3 || charm === 4) {
+    else if (charm >= 4 && charm < 6) {
     charmBar.innerHTML= `
             <div class="bar-block charm-bar-filled"></div>
             <div class="bar-block charm-bar-filled"></div> 
@@ -357,7 +412,7 @@ charm = Math.floor((Math.random() * 6) + 1);
             `;
     }
 
-    else if (charm === 5 || charm === 6) {
+    else if (charm === 6) {
     charmBar.innerHTML= `
             <div class="bar-block charm-bar-filled"></div>
             <div class="bar-block charm-bar-filled"></div> 
@@ -367,7 +422,7 @@ charm = Math.floor((Math.random() * 6) + 1);
 
 intuition  = Math.floor((Math.random() * 6) + 1);
 
-    if (intuition === 1 || intuition === 2) {
+    if (intuition <= 3) {
     intuitionBar.innerHTML= `
             <div class="bar-block intuition-bar-filled"></div>
             <div class="bar-block intuition-bar-empty"></div> 
@@ -376,7 +431,7 @@ intuition  = Math.floor((Math.random() * 6) + 1);
             return;
     }
 
-    else if (intuition === 3 || intuition === 4) {
+    else if (intuition >= 4 && intuition < 6) {
     intuitionBar.innerHTML= `
             <div class="bar-block intuition-bar-filled"></div>
             <div class="bar-block intuition-bar-filled"></div> 
@@ -385,7 +440,7 @@ intuition  = Math.floor((Math.random() * 6) + 1);
             return;
     }
 
-    else if (intuition === 5 || intuition === 6) {
+    else if (intuition === 6) {
     intuitionBar.innerHTML= `
             <div class="bar-block intuition-bar-filled"></div>
             <div class="bar-block intuition-bar-filled"></div> 
@@ -393,7 +448,7 @@ intuition  = Math.floor((Math.random() * 6) + 1);
             `;
             return;
     }
-}
+};
 
 function displayDropdownGuide(currentIndex) {
     if (currentIndex >= 0 && currentIndex < drinkGuide.length) {
@@ -402,7 +457,7 @@ function displayDropdownGuide(currentIndex) {
         drinkGuideMood.innerText = drinkGuide[currentIndex].customerMood;
         drinkGuideContent.innerText = drinkGuide[currentIndex].recipe;
     }
-}
+};
 
 function nextPage() {
     drinkGuideNext.addEventListener("click", () => {
@@ -415,7 +470,7 @@ function nextPage() {
             console.log("You are at the end of the recipe book!")
         }
     });
-}
+};
 
 function previouspage() {
     drinkGuidePrevious.addEventListener("click", () => {
@@ -428,24 +483,65 @@ function previouspage() {
             console.log("You are at the start of the recipe book!")
         }
         });
-}
+};
 
+function checkNightStatus() {
+    const target = pointsRequired[night - 1];
+    console.log(`Checking status, Points: ${points}, Target: ${pointsRequired}`);
+    if (points >= target) {
+        displayResultScreen("success");
+    }
+    else {
+        displayResultScreen("fail");
+    }
+};
 
-rollDice();
-console.log(`You rolled a ${energy} for energy!`);
-console.log(`You rolled a ${charm} for charm!`);
-console.log(`You rolled a ${intuition} for intuition!`);
+// function displayResultScreen(status) {
+//     console.log("Displaying Result Screen...")
+// const overlay = document.createElement("div");
+// overlay.classList.add("result-screen");
 
-displayCustomer();
+// const message = document.createElement("h2");
+// const next = document.createElement("button");
+// const retry = document.createElement("button")
+
+// next.classList.add("result-button");
+// retry.classList.add("result-button");
+// next.id = "next-button";
+// retry.id = "retry-button";
+
+// if (status === "success") {
+//     message.innerText = `Night ${night} Complete!`;
+//     next.innerText = "Next Night";
+
+//     next.addEventListener("click", () => {
+//     overlay.remove();
+//     night++;
+//     startNight();
+//     });
+
+//     overlay.append(message, next);
+// }
+// else {
+//     message.innerText = "Try Again!";
+//     overlay.append(message, retry);
+
+//     retry.addEventListener("click", () => {
+//     overlay.remove();
+//     startNight();
+//     });
+// };
+// document.body.appendChild(overlay);
+// console.log(document.querySelector(".result-screen"));
+// };
+
+startNight();
+
 
 displayDropdownGuide(currentIndex);
 
 nextPage();
 previouspage();
-
-
-
-
 
 
 

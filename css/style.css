@@ -348,6 +348,18 @@ body {
     font-size: 10px;
 }
 
+.result-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: purple;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
 
 
 
