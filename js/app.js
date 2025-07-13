@@ -95,6 +95,45 @@ const customers = [
     }
 ];
 
+const drinkGuide = [
+    {
+        drink: "Honey Bloom",
+        customerMood: "happy",
+        icon: "",
+        recipe: "2 of honey, 1 of peach & 1 of matcha",
+    },
+    {
+        drink: "Lavender Rain",
+        customerMood: "sad",
+        icon: "",
+        recipe: "2 of lavender, 1 of black tea & 1 of milk",
+    },
+    {
+        drink: "Ember Shot",
+        customerMood: "angry",
+        icon: "",
+        recipe: "2 of espresso, 1 of cinnamon & 1 of charcoal",
+    },
+    {
+        drink: "Dream Fog",
+        customerMood: "fearful",
+        icon: "",
+        recipe: "1 of oat milk, 2 of vanilla & 1 of cinnamon",
+    },
+    {
+        drink: "Mint Revival",
+        customerMood: "disgusted",
+        icon: "",
+        recipe: "2 of mint, 1 of black tea & 1 of charcoal",
+    },
+    {
+        drink: "Stardust Cloud",
+        customerMood: "surprised",
+        icon: "",
+        recipe: "1 of matcha, 1 of oat milk, 1 of vanilla & 1 of honey",
+    }
+];
+
 
 
 /*-------------------------------- Variables --------------------------------*/
@@ -117,6 +156,8 @@ let randomIndex = Math.floor(Math.random() * customers.length);
 let randomNumber = Math.floor((Math.random() * 6) + 1);
 
 let currentCustomer = customers[randomIndex];
+
+let currentIndex = 0;
 
 /*------------------------ Cached Element References ------------------------*/
 const mixingIngredients = document.querySelectorAll(".mixing-slot");
@@ -142,6 +183,18 @@ const energyBar = document.querySelector(".energy-bar-blocks");
 const charmBar = document.querySelector(".charm-bar-blocks");
 
 const intuitionBar = document.querySelector(".intuition-bar-blocks");
+
+const drinkGuideName = document.querySelector(".dropdown-drink-name");
+
+const drinkGuideIcon = document.querySelector(".dropdown-drink-icon");
+
+const drinkGuideMood = document.querySelector(".mood");
+
+const drinkGuideContent = document.querySelector(".dropdown-drink-description");
+
+const drinkGuideNext = document.querySelector("#next");
+
+const drinkGuidePrevious = document.querySelector("#previous");
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -262,87 +315,121 @@ function rollDice() {
 
 energy = Math.floor((Math.random() * 6) + 1);
 
-
-if (energy === 1 || energy === 2) {
-    energyBar.innerHTML= `
+    if (energy === 1 || energy === 2) {
+        energyBar.innerHTML= `
             <div class="bar-block energy-bar-filled"></div>
             <div class="bar-block energy-bar-empty"></div> 
             <div class="bar-block energy-bar-empty"></div>
             `;
-}
+    }       
 
-else if (energy === 3 || energy === 4) {
+    else if (energy === 3 || energy === 4) {
     energyBar.innerHTML= `
             <div class="bar-block energy-bar-filled"></div>
             <div class="bar-block energy-bar-filled"></div> 
             <div class="bar-block energy-bar-empty"></div>
             `;
-}
+    }
 
-else if (energy === 5 || energy === 6) {
+    else if (energy === 5 || energy === 6) {
     energyBar.innerHTML= `
             <div class="bar-block energy-bar-filled"></div>
             <div class="bar-block energy-bar-filled"></div> 
             <div class="bar-block energy-bar-filled"></div>
             `;
-}
+    }
 
 charm = Math.floor((Math.random() * 6) + 1);
 
-if (charm === 1 || charm === 2) {
+    if (charm === 1 || charm === 2) {
     charmBar.innerHTML= `
             <div class="bar-block charm-bar-filled"></div>
             <div class="bar-block charm-bar-empty"></div> 
             <div class="bar-block charm-bar-empty"></div>
             `;
-}
+    }
 
-else if (charm === 3 || charm === 4) {
+    else if (charm === 3 || charm === 4) {
     charmBar.innerHTML= `
             <div class="bar-block charm-bar-filled"></div>
             <div class="bar-block charm-bar-filled"></div> 
             <div class="bar-block charm-bar-empty"></div>
             `;
-}
+    }
 
-else if (charm === 5 || charm === 6) {
+    else if (charm === 5 || charm === 6) {
     charmBar.innerHTML= `
             <div class="bar-block charm-bar-filled"></div>
             <div class="bar-block charm-bar-filled"></div> 
             <div class="bar-block charm-bar-filled"></div>
             `;
-}
+    }
 
 intuition  = Math.floor((Math.random() * 6) + 1);
 
-if (intuition === 1 || intuition === 2) {
+    if (intuition === 1 || intuition === 2) {
     intuitionBar.innerHTML= `
             <div class="bar-block intuition-bar-filled"></div>
             <div class="bar-block intuition-bar-empty"></div> 
             <div class="bar-block intuition-bar-empty"></div>
             `
             return;
-}
+    }
 
-else if (intuition === 3 || intuition === 4) {
+    else if (intuition === 3 || intuition === 4) {
     intuitionBar.innerHTML= `
             <div class="bar-block intuition-bar-filled"></div>
             <div class="bar-block intuition-bar-filled"></div> 
             <div class="bar-block intuition-bar-empty"></div>
             `
             return;
-}
+    }
 
-else if (intuition === 5 || intuition === 6) {
+    else if (intuition === 5 || intuition === 6) {
     intuitionBar.innerHTML= `
             <div class="bar-block intuition-bar-filled"></div>
             <div class="bar-block intuition-bar-filled"></div> 
             <div class="bar-block intuition-bar-filled"></div>
             `;
             return;
+    }
 }
 
+function displayDropdownGuide(currentIndex) {
+    if (currentIndex >= 0 && currentIndex < drinkGuide.length) {
+        drinkGuideName.innerText = drinkGuide[currentIndex].drink;
+        drinkGuideIcon.innerText = drinkGuide[currentIndex].icon;
+        drinkGuideMood.innerText = drinkGuide[currentIndex].customerMood;
+        drinkGuideContent.innerText = drinkGuide[currentIndex].recipe;
+    }
 }
+
+function nextPage() {
+    drinkGuideNext.addEventListener("click", () => {
+        if (currentIndex < drinkGuide.length - 1) {
+        currentIndex += 1;
+        drinkGuide[currentIndex];
+        displayDropdownGuide(currentIndex);
+        }
+        else {
+            console.log("You are at the end of the recipe book!")
+        }
+    });
+}
+
+function previouspage() {
+    drinkGuidePrevious.addEventListener("click", () => {
+        if (currentIndex > 0)  {
+        currentIndex -= 1;
+        drinkGuide[currentIndex];
+        displayDropdownGuide(currentIndex);
+        }
+        else {
+            console.log("You are at the start of the recipe book!")
+        }
+        });
+}
+
 
 rollDice();
 console.log(`You rolled a ${energy} for energy!`);
@@ -350,6 +437,15 @@ console.log(`You rolled a ${charm} for charm!`);
 console.log(`You rolled a ${intuition} for intuition!`);
 
 displayCustomer();
+
+displayDropdownGuide(currentIndex);
+
+nextPage();
+previouspage();
+
+
+
+
 
 
 

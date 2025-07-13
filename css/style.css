@@ -38,6 +38,7 @@
 
 .right-segment {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
@@ -186,12 +187,13 @@ body {
     background: orange;
     border-radius: 50%;
     border: 2px solid green;
+    bottom: -40px;
 }
 
 #dialogue {
     position: absolute;
-    top: -20px;
-    right: -80px;
+    top: -60px;
+    right: -120px;
     padding: 8px 12px;
     border-radius: 10px;
     font-size: 14px;
@@ -205,8 +207,10 @@ body {
 .modifier-bars-container {
     display: flex;
     flex-direction: column;
+    position: absolute;
     gap: 10px;
     padding: 20px;
+    bottom: 10px;
 }
 
 .energy-bar-blocks {
@@ -263,6 +267,36 @@ body {
 }
 
 /* Dropdown recipe guide */
+.hamburger-menu-container {
+    position: absolute;
+    width: 100%;
+}
+
+#hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+#hamburger-icon {
+    position: absolute;
+    display: flex;
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    right: 4px;
+    top: 4px;
+    gap: 5px;
+    margin: 4px;
+    padding: 10px;
+}
+
+.hamburger-line {
+    width: 30px;
+    height: 6px;
+    background: white; 
+    border-radius: 2px;
+}
+
 .recipe-dropdown-container {
     display: flex;
     flex-direction: column;
@@ -283,7 +317,7 @@ body {
     border: 2px solid white;
 }
 
-.drink-description {
+.dropdown-drink-description {
     margin: 10px auto 10px auto;
     border: 2px solid white;
 }
