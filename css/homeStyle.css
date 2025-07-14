@@ -6,17 +6,33 @@ body {
     width: 80vw;
     margin: 0 auto;
     height: 100vh;
-    background-color: lightgrey;
+    background-color: #0d1b2a;
+    background-image: url("/assets/skyBackground.png");
+    color: #999fa3;
 }
 
 .home-screen-container {
-    margin-top: 30vh;
+    margin: 14vh auto 0;
     text-align: center;
-    background-color: burlywood;
+    background-color: #1b263b;
+    max-width: 700px;
+    max-height: 600px;
     width: 80vh;
     height: 60vh;
-    border: 6px solid rgb(158, 132, 99);
-    border-radius: 30px;
+    padding: 50px;
+    border: 1px solid #706caa;
+    box-shadow:
+    -8px 0 0 0 #706caa,
+    8px 0 0 0 #706caa,
+    0 -8px 0 0 #706caa,
+    0 8px 0 0 #706caa;
+    image-rendering: pixelated;
+}
+
+.home-screen-container:hover {
+    box-shadow:
+    0 0 10px #706caa,
+    0 0 20px #706caa;
 }
 
 .header {
@@ -40,18 +56,78 @@ body {
 }
 
 .home-button {
+    font-size: 14px;
     gap: 15px;
-    width: 60px;
+    height: 30px;
+    width: 120px;
+    border: 2px solid black;
+    border-radius: 12px;
     margin: 10px auto;
     background-color: rgb(117, 37, 191);
     color: white;
     cursor: pointer;
+     box-shadow: 
+    -2px 0 0 0 lavender,
+    2px 0 0 0 lavender,
+    0 -2px 0 0 lavender,
+    0 2px 0 0 lavender;
 }
 
 .home-button:hover { /* Add effect here */
-    color: rgb(229, 204, 12);
+    color: rgb(12, 229, 222);
 }
 
-h3 {
-    font-size: 14px;
+#title {
+    font-family: "Press Start 2P", system-ui;
+    font-size: 2rem;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    color: #f4d58d;
+    text-shadow: 
+    0 0 4px #f4d58d,
+    0 0 8px #b85c5c;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    line-height: 1.5px;
+    -webkit-animation: glow 4s ease-in-out infinite;
+    -moz-animation: glow 4s ease-in-out infinite;
+    animation: glow 4s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+    text-shadow: 
+    0 0 6px #f4d58d, 
+    /* 0 0 10px #b85c5c,  */
+    0 0 14px #706caa;
+    }
+    50% {
+    text-shadow: 
+    0 0 10px #fff1c1, 
+    /* 0 0 16px #b85c5c, */
+    0 0 20px #706caa; 
+    }
+}
+
+
+#caption {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: medium 500;
+    font-style: italic;
+    color: #706caa;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    max-width: 80%;
+    margin: 10 auto;
+    opacity: 0;
+    -webkit-animation: fadeIn 2s ease-out 1 forwards;
+    -moz-animation: fadeIn 2s ease-out 1 forwards;
+    animation: fadeIn 2s ease-out 1 forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    to {opacity: 1;}
 }

@@ -1,3 +1,4 @@
+
 const drinks = [
     {
     name: "Lavender Rain",
@@ -91,7 +92,62 @@ const customers = [
         highIntuition: "Throw something wild at me I'm here for it!",
         success: "Whoa... I didn't see that coming.",
         fail: "That was boring."
-    }
+    },
+    {
+        name: "Abood",
+        mood: "surprised",
+        type: "person",
+        drink: "Stardust Cloud",
+        lowIntuition: "...",
+        medIntuition: "I didn't expect today to go the way it did.",
+        highIntuition: "I'm ready for anything, shock me!",
+        success: "Whoa... that was COOOL!.",
+        fail: "That was underwhelming..."
+    },
+    {
+        name: "Hussain",
+        mood: "happy",
+        type: "person",
+        drink: "Honey Bloom",
+        lowIntuition: "...",
+        medIntuition: "Isn't the world sunshine & rainbows?",
+        highIntuition: "I've been smiling for an hour now.",
+        success: "You just made this day even better!",
+        fail: "Well... that's one way to wipe a smile away."
+    },
+    {
+        name: "Ali",
+        mood: "sad",
+        type: "person",
+        drink: "Lavender Rain",
+        lowIntuition: "...",
+        medIntuition: "I feel so cold and distant...",
+        highIntuition: "Throw something wild at me I'm here for it!",
+        success: "I feel warm!.",
+        fail: "That was boring."
+    },
+    {
+        name: "Fatima",
+        mood: "disgusted",
+        type: "person",
+        drink: "Mint Revival",
+        lowIntuition: "...",
+        medIntuition: "I need something... refreshing.",
+        highIntuition: "I need something to cleanse my palette!",
+        success: "Spot on!.",
+        fail: "that was horrible."
+    },
+    {
+        name: "Zainab",
+        mood: "angry",
+        type: "person",
+        drink: "Ember Shot",
+        lowIntuition: "...",
+        medIntuition: "do not speak to me.",
+        highIntuition: "I hate everything and everyone!",
+        success: "I take that back.",
+        fail: "#$/!@."
+    },
 ];
 
 const drinkGuide = [

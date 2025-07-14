@@ -23,8 +23,6 @@ let intuition = 0;
 
 let randomIndex = Math.floor(Math.random() * customers.length);
 
-let randomNumber = Math.floor((Math.random() * 6) + 1);
-
 let currentCustomer = customers[randomIndex];
 
 let currentIndex = 0;
@@ -80,7 +78,7 @@ const nextButton = document.querySelector("#result-next");
 
 const retryButton = document.querySelector("#result-retry");
 
-resetButton = document.querySelector("#reset");
+const resetButton = document.querySelector("#reset");
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -94,7 +92,7 @@ ingredients.forEach((ingredient) => {
             currentMixingIngredients.pop();
         }
 
-        for (i = 0; i < 4; i++) {
+        for (let i = 0; i < 4; i++) {
             mixingIngredients[i].innerText = currentMixingIngredients[i] || "";
         }
 
@@ -131,7 +129,7 @@ resetButton.addEventListener("click", resetGame);
 function startNight() {
     points = 0;
     drinkReady = false;
-    let servedCustomers = [];
+    servedCustomers = [];
     handleClear();
     rollDice();
     displayNightProgress();
@@ -164,7 +162,7 @@ function handleMix() {
         drinkReady = true;
         }
 
-    for (i = 0; i < mixingIngredients.length; i++) {
+    for (let i = 0; i < mixingIngredients.length; i++) {
         mixingIngredients[i].innerText= "";
     }
     currentMixingIngredients = [];
@@ -172,7 +170,7 @@ function handleMix() {
 
 function handleClear() {
     currentMixingIngredients = [];
-    for (i = 0; i < mixingIngredients.length; i++) {
+    for (let i = 0; i < mixingIngredients.length; i++) {
         mixingIngredients[i].innerText= "";
     }
     drinkSlot.innerText= "";
@@ -180,7 +178,7 @@ function handleClear() {
 };
 
 function handleServe() {
-    drinkName = drinkSlot.innerText;
+   const drinkName = drinkSlot.innerText;
     if (!drinkReady) {
         console.log("You need to mix the drink first!");
         return;
@@ -366,7 +364,6 @@ function nextPage() {
     drinkGuideNext.addEventListener("click", () => {
         if (currentIndex < drinkGuide.length - 1) {
         currentIndex += 1;
-        drinkGuide[currentIndex];
         displayDropdownGuide(currentIndex);
         }
         else {
@@ -379,7 +376,6 @@ function previouspage() {
     drinkGuidePrevious.addEventListener("click", () => {
         if (currentIndex > 0)  {
         currentIndex -= 1;
-        drinkGuide[currentIndex];
         displayDropdownGuide(currentIndex);
         }
         else {
