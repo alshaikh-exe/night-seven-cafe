@@ -134,6 +134,8 @@ const drinkGuide = [
     }
 ];
 
+let servedCustomers = [];
+
 
 /*-------------------------------- Variables --------------------------------*/
 let currentMixingIngredients = [];
@@ -213,6 +215,8 @@ const nextButton = document.querySelector("#result-next");
 
 const retryButton = document.querySelector("#result-retry");
 
+resetButton = document.querySelector("#reset");
+
 
 /*----------------------------- Event Listeners -----------------------------*/
 ingredients.forEach((ingredient) => {
@@ -255,11 +259,14 @@ retryButton.addEventListener("click", () => {
     startNight();
     });
 
+resetButton.addEventListener("click", resetGame);
+
 
 /*-------------------------------- Functions --------------------------------*/
 function startNight() {
     points = 0;
     drinkReady = false;
+    let servedCustomers = [];
     handleClear();
     rollDice();
     displayNightProgress();
@@ -380,8 +387,17 @@ function displayCustomer() {
 };
 
 function displayNewCustomer() {
+
+    let newCustomer;
+    
+    do {
     randomIndex = Math.floor(Math.random() * customers.length);
-    currentCustomer = customers[randomIndex];
+    newCustomer= customers[randomIndex];
+    } while (servedCustomers.includes(newCustomer.name));
+    
+        currentCustomer = newCustomer;
+        servedCustomers.push(currentCustomer.name);
+
     displayCustomer();
 };
 
@@ -534,6 +550,26 @@ else {
     retryButton.disabled = false;
 }
 };
+
+function resetGame() {
+    night = 1;
+    points = 0;
+    currentMixingIngredients = [];
+    drinkReady = false;
+
+    energyBar.innerHTML = "";
+    charmBar.innerHTML = "";
+    intuitionBar.innerHTML = "";
+
+    dialogue.innerText = "";
+    drinkSlot.innerText = "";
+
+    if (resultScreen) {
+        resultScreen.classList.add("hidden");
+    }
+
+    startNight();
+}
 
 startNight();
 
