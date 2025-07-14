@@ -29,6 +29,8 @@ let currentIndex = 0;
 
 let servedCustomers = [];
 
+let drinkName = "";
+
 /*------------------------ Cached Element References ------------------------*/
 const currentNight = document.querySelector("#title");
 
@@ -146,15 +148,28 @@ function displayNightProgress() {
 }
 
 function handleMix() {
+
+    drinkSlot.innerText = "";
     const sortedCurrentMixingIngredients = [...currentMixingIngredients].sort();
 
     for (const drink of drinks) {
         const sortedIngredients = [...drink.ingredients].sort();
 
         if (String(sortedCurrentMixingIngredients) === String(sortedIngredients)) {
-        drinkSlot.innerText = drink.name;
-        drinkReady = true;
-        break;
+            drinkName = drink.name;
+
+            const iconEl = document.createElement("div");
+            iconEl.classList.add("drink");
+            iconEl.classList.add(drink.icon);
+
+            const nameEl = document.createElement("p");
+            nameEl.textContent = drink.name;
+
+            drinkSlot.appendChild(iconEl);
+            drinkSlot.appendChild(nameEl);
+
+            drinkReady = true;
+            break;
         }
     }
         if (!drinkReady) {
@@ -178,11 +193,38 @@ function handleClear() {
 };
 
 function handleServe() {
-   const drinkName = drinkSlot.innerText;
+
     if (!drinkReady) {
         console.log("You need to mix the drink first!");
         return;
     } 
+
+    drinkSlot.innerHTML = "";
+
+    let servedDrink;
+    for (let i = 0; i < drinks.length; i++) {
+    if (drinks[i].name === drinkName) {
+        servedDrink = drinks[i];
+        break;
+    }
+   }
+
+   const iconEl = document.createElement("div");
+   iconEl.classList.add("drink");
+
+   if (servedDrink) {
+    iconEl.classList.add(servedDrink.icon);
+   }
+   else {
+    iconEl.classList.add("mystery");
+   }
+
+   const nameEl = document.createElement("p");
+   nameEl.textContent = drinkName || "Mystery Drink";
+
+   drinkSlot.appendChild(iconEl);
+   drinkSlot.appendChild(nameEl);
+
 
     if (drinkName === currentCustomer.drink) {
         if (charm < 4)

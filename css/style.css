@@ -142,6 +142,7 @@ body {
 
 #drink-slot {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 60px;
@@ -280,7 +281,6 @@ body {
 #hamburger-icon {
     position: absolute;
     display: flex;
-    display: none;
     flex-direction: column;
     cursor: pointer;
     right: 4px;
@@ -392,12 +392,34 @@ body {
     display: none !important;
 }
 
+#hamburger-menu ~ .recipe-dropdown-container {
+    display: none;
+}
 
+#hamburger-menu:checked ~ .recipe-dropdown-container {
+    display: flex;
+}
 
+/* drink-icons */
+.drink {
+    width: 32px;
+    height: 32px;
+    background-image: url("/assets/drinks.png");
+    background-size: auto;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+}
 
+.drink.cream-white { background-position: 0px -32px; }
 
+.drink.red { background-position: 0px 0px; }
 
+.drink.black { background-position: -96px 0px; }
 
+.drink.brown { background-position: -32px -32px; }
 
+.drink.green { background-position: -160px -32px; }
 
+.drink.pink { background-position: -160px 0px; }
 
+.drink.mystery { background-position: -128px -32px; }

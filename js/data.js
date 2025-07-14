@@ -3,26 +3,32 @@ const drinks = [
     {
     name: "Lavender Rain",
     ingredients: ["lavender", "lavender", "black-tea", "milk"],
+    icon: "pink"
     },
     {
     name: "Honey Bloom",
     ingredients: ["honey", "honey", "peach", "matcha"],
+    icon: "cream-white"
     },
     {
     name: "Ember Shot",
     ingredients: ["espresso", "espresso", "cinnamon", "charcoal"],
+    icon: "red"
     },
     {
     name: "Dream Fog",
     ingredients: ["oat-milk", "vanilla", "vanilla", "cinnamon"],
+    icon: "brown"
     },
     {
     name: "Stardust Cloud",
     ingredients: ["matcha", "vanilla", "oat-milk", "honey"],
+    icon: "black"
     },
     {
     name: "Mint Revival",
     ingredients: ["mint", "black-tea", "charcoal", "mint"],
+    icon: "green"
     }
 ];
 
@@ -154,37 +160,37 @@ const drinkGuide = [
     {
         drink: "Honey Bloom",
         customerMood: "happy",
-        icon: "",
+        icon: "cream-white",
         recipe: "2 of honey, 1 of peach & 1 of matcha",
     },
     {
         drink: "Lavender Rain",
         customerMood: "sad",
-        icon: "",
+        icon: "pink",
         recipe: "2 of lavender, 1 of black tea & 1 of milk",
     },
     {
         drink: "Ember Shot",
         customerMood: "angry",
-        icon: "",
+        icon: "red",
         recipe: "2 of espresso, 1 of cinnamon & 1 of charcoal",
     },
     {
         drink: "Dream Fog",
         customerMood: "fearful",
-        icon: "",
+        icon: "brown",
         recipe: "1 of oat milk, 2 of vanilla & 1 of cinnamon",
     },
     {
         drink: "Mint Revival",
         customerMood: "disgusted",
-        icon: "",
+        icon: "green",
         recipe: "2 of mint, 1 of black tea & 1 of charcoal",
     },
     {
         drink: "Stardust Cloud",
         customerMood: "surprised",
-        icon: "",
+        icon: "black",
         recipe: "1 of matcha, 1 of oat milk, 1 of vanilla & 1 of honey",
     }
 ];
