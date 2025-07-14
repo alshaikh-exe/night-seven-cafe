@@ -205,6 +205,14 @@ const drinkGuideNext = document.querySelector("#next");
 
 const drinkGuidePrevious = document.querySelector("#previous");
 
+const resultScreen = document.querySelector("#result-screen");
+
+const message = document.querySelector("#result-message");
+
+const nextButton = document.querySelector("#result-next");
+
+const retryButton = document.querySelector("#result-retry");
+
 
 /*----------------------------- Event Listeners -----------------------------*/
 ingredients.forEach((ingredient) => {
@@ -236,9 +244,23 @@ clearButton.addEventListener("click", handleClear);
 
 serveButton.addEventListener("click", handleServe);
 
+nextButton.addEventListener("click", () => {
+    resultScreen.classList.add("hidden");
+    night++;
+    startNight();
+    });
+
+retryButton.addEventListener("click", () => {
+    resultScreen.classList.add("hidden");
+    startNight();
+    });
+
 
 /*-------------------------------- Functions --------------------------------*/
 function startNight() {
+    points = 0;
+    drinkReady = false;
+    handleClear();
     rollDice();
     displayNightProgress();
     displayNewCustomer();
@@ -496,44 +518,22 @@ function checkNightStatus() {
     }
 };
 
-// function displayResultScreen(status) {
-//     console.log("Displaying Result Screen...")
-// const overlay = document.createElement("div");
-// overlay.classList.add("result-screen");
+function displayResultScreen(status) {
+    console.log("Displaying Result Screen...")
 
-// const message = document.createElement("h2");
-// const next = document.createElement("button");
-// const retry = document.createElement("button")
+    resultScreen.classList.remove("hidden");
 
-// next.classList.add("result-button");
-// retry.classList.add("result-button");
-// next.id = "next-button";
-// retry.id = "retry-button";
-
-// if (status === "success") {
-//     message.innerText = `Night ${night} Complete!`;
-//     next.innerText = "Next Night";
-
-//     next.addEventListener("click", () => {
-//     overlay.remove();
-//     night++;
-//     startNight();
-//     });
-
-//     overlay.append(message, next);
-// }
-// else {
-//     message.innerText = "Try Again!";
-//     overlay.append(message, retry);
-
-//     retry.addEventListener("click", () => {
-//     overlay.remove();
-//     startNight();
-//     });
-// };
-// document.body.appendChild(overlay);
-// console.log(document.querySelector(".result-screen"));
-// };
+if (status === "success") {
+    message.innerText = `Night ${night} Complete!`;
+    nextButton.disabled = false;
+    retryButton.disabled = true;
+}
+else {
+    message.innerText = "Try Again!";
+    nextButton.disabled = true;
+    retryButton.disabled = false;
+}
+};
 
 startNight();
 
