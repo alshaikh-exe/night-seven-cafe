@@ -84,7 +84,9 @@ const retryButton = document.querySelector("#result-retry");
 
 const resetButton = document.querySelector("#reset");
 
-drinkSlotName.textCentent=""
+const exitButton = document.querySelector("#exit");
+
+drinkSlotName.textCentent = "";
 /*----------------------------- Event Listeners -----------------------------*/
 ingredients.forEach((ingredient) => {
     ingredient.addEventListener("click", () => {
@@ -97,8 +99,37 @@ ingredients.forEach((ingredient) => {
         }
 
         for (let i = 0; i < 4; i++) {
-            mixingIngredients[i].innerText = currentMixingIngredients[i] || "";
+            const slot = mixingIngredients[i];
+            slot.innerHTML = "";
+
+            const ingredientId = currentMixingIngredients[i];
+
+            if (ingredientId) {
+                const originalIngredient = document.getElementById(ingredientId);
+                const ingredientIcon = originalIngredient.querySelector("img").src;
+                const ingredientLabel = originalIngredient.querySelector(".label").textContent;
+                
+                const icon = document.createElement("img");
+                icon.src = ingredientIcon;
+                icon.alt = ingredientLabel;
+                icon.classList.add("drink-icon", "preview");
+
+                const label = document.createElement("span");
+                label.classList.add("label");
+                label.textContent = ingredientLabel;
+
+                const overlay = document.createElement("div");
+                overlay.classList.add("overlay");
+
+                slot.appendChild(icon);
+                slot.appendChild(label);
+                slot.appendChild(overlay);
+            }
         }
+
+        // for (let i = 0; i < 4; i++) {
+        //     mixingIngredients[i].innerText = currentMixingIngredients[i] || "";
+        // }
 
         if (currentMixingIngredients.length === 4) {
             previewDrink();
@@ -127,6 +158,10 @@ retryButton.addEventListener("click", () => {
     });
 
 resetButton.addEventListener("click", resetGame);
+
+exitButton.addEventListener("click", () => {
+    window.location.href = "home.html";
+});
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -271,6 +306,8 @@ function handleServe() {
 };
 
 function previewDrink() {
+    drinkSlot.innerHTML = "";
+
     const sortedCurrentMixingIngredients = [...currentMixingIngredients].sort();
 
     for (const drink of drinks) {

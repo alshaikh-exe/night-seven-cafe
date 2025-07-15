@@ -7,6 +7,12 @@
    <link rel="stylesheet" href="/css/style.css">
    <script type="module" src="./js/data.js"></script>
    <script type="module" src="./js/app.js"></script>
+   <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
     <!-- General Functional Buttons -->
@@ -14,14 +20,27 @@
         <div class="top-segment">
     <div class="general-btns-container">
     <div id="exit-btn-container">
-    <a href="home.html">
-    <button id="exit">EXIT</button>
-    </a>
+
+        <button class="pixel-btn" id="exit">
+            <div class="pixel-face">
+                <div class="pixel-inner">EXIT</div>
+                <div class="pixel-glow"></div>
+                </div>
+                <div class="pixel-shadow"></div>
+        </button>
     </div>
+
     <div id="reset-btn-container">
-    <button id="reset">RESET</button>
+        <button class="pixel-btn" id="reset">
+            <div class="pixel-face">
+                <div class="pixel-inner">RESET</div>
+                <div class="pixel-glow"></div>
+                </div>
+                <div class="pixel-shadow"></div>
+            </button>
+            </div>
     </div> 
-    </div>
+    
      <!-- Main Game Trackers -->
    <h1 id="title">Night: </h1>
    <h2 id="goal">Goal: </h2>
@@ -31,40 +50,88 @@
          <div class="left-segment">
    <div class="ingredients-list">
        
-           <button class="ingredient" id="oat-milk">oat milk</button>
+           <button class="ingredient" id="oat-milk">
+            <img src="/assets/ingredients/oatMilk.png" alt="oat-milk icon">
+            <div class="overlay"></div>
+            <span class="label">Oat-milk</span>
+           </button>
       
        
-           <button class="ingredient" id="charcoal">charcoal</button>
+           <button class="ingredient" id="charcoal">
+            <img src="/assets/ingredients/charcoal.png" alt="charcoal icon">
+            <div class="overlay"></div>
+            <span class="label">Charcoal</span>
+           </button>
       
         
-           <button class="ingredient" id="rosewater">rosewater</button>
+           <button class="ingredient" id="rosewater">
+            <img src="/assets/ingredients/rosewater.png" alt="rosewater icon">
+            <div class="overlay"></div>
+            <span class="label">Rosewater</span>
+           </button>
 
 
-           <button class="ingredient" id="matcha">matcha</button>
+           <button class="ingredient" id="matcha">
+            <img src="/assets/ingredients/matcha.png" alt="matcha icon">
+            <div class="overlay"></div>
+            <span class="label">Matcha</span>
+           </button>
        
 
-           <button class="ingredient" id="lavender">lavender</button>
+           <button class="ingredient" id="lavender">
+            <img src="/assets/ingredients/lavender.png" alt="lavender icon">
+            <div class="overlay"></div>
+            <span class="label">Lavender</span>
+           </button>
        
         
-           <button class="ingredient" id="mint">mint</button>
+           <button class="ingredient" id="mint">
+            <img src="/assets/ingredients/mint.png" alt="mint icon">
+            <div class="overlay"></div>
+            <span class="label">Mint</span>
+           </button>
        
         
-           <button class="ingredient" id="jasmine">jasmine</button>
+           <button class="ingredient" id="jasmine">
+            <img src="/assets/ingredients/jasmine.png" alt="jasmine icon">
+            <div class="overlay"></div>
+            <span class="label">Jasmine</span>
+           </button>
       
        
-           <button class="ingredient" id="sakura">sakura</button>
+           <button class="ingredient" id="sakura">
+            <img src="/assets/ingredients/sakura.png" alt="sakura icon">
+            <div class="overlay"></div>
+            <span class="label">Sakura</span>
+           </button>
        
   
-           <button class="ingredient" id="vanilla">vanilla</button>
+           <button class="ingredient" id="vanilla">
+            <img src="/assets/ingredients/vanilla.png" alt="vanilla icon">
+            <div class="overlay"></div>
+            <span class="label">Vanilla</span>
+           </button>
 
        
-           <button class="ingredient" id="cinnamon">cinnamon</button>
+           <button class="ingredient" id="cinnamon">
+            <img src="/assets/ingredients/cinnamon.png" alt="cinnamon icon">
+            <div class="overlay"></div>
+            <span class="label">Cinnamon</span>
+           </button>
        
         
-           <button class="ingredient" id="honeycomb">honeycomb</button>
+           <button class="ingredient" id="honeycomb">
+            <img src="/assets/ingredients/honeycomb.png" alt="honeycomb icon">
+            <div class="overlay"></div>
+            <span class="label">Honeycomb</span>
+           </button>
        
        
-           <button class="ingredient" id="licorice-root">licorice-root</button>
+           <button class="ingredient" id="licorice-root">
+            <img src="/assets/ingredients/licoriceRoot.png" alt="licorice-root icon">
+            <div class="overlay"></div>
+            <span class="label">Licorice-root</span>
+           </button>
     
        
    </div>
@@ -98,9 +165,33 @@
 
        <!-- Mixing Station Buttons -->
        <div class="mixing-station-btns-container">
-            <button class="mixing-btn" id="mix-btn">MIX</button>
-            <button class="mixing-btn" id="clear-btn">CLEAR</button>
-            <button class="mixing-btn" id="serve-btn">SERVE</button>
+        <button class="mixing-btn-pixel" id="mix-btn">
+            <div class="mixing-btn-face pixel-corners">
+                <div class="mixing-btn-inner">MIX</div>
+                <div class="mixing-btn-glow"></div>
+                </div>
+            <div class="mixing-btn-shadow"></div>
+            </button>
+
+        <button class="mixing-btn-pixel" id="clear-btn">
+            <div class="mixing-btn-face pixel-corners">
+                <div class="mixing-btn-inner">CLEAR</div>
+                <div class="mixing-btn-glow"></div>
+                </div>
+                <div class="mixing-btn-shadow"></div>
+             </button>
+
+            <button class="mixing-btn-pixel" id="serve-btn">
+            <div class="mixing-btn-face pixel-corners">
+                <div class="mixing-btn-inner">SERVE</div>
+                <div class="mixing-btn-glow"></div>
+                </div>
+            <div class="mixing-btn-shadow"></div>
+            </button>
+
+        
+
+
            </div>
            </div>
        </div>
@@ -110,7 +201,7 @@
 
     <!-- Hamburger Menu -->
      <div class="hamburger-menu-container">
-     <input id="hamburger-menu" type="checkbox">
+    <input id="hamburger-menu" type="checkbox">
      <label id="hamburger-icon" for="hamburger-menu">
      <div class="hamburger-line"></div>
      <div class="hamburger-line"></div>
@@ -131,10 +222,10 @@
 
     <!-- Recipe Guide Dropdown Buttons -->
         <div class="page-selectors">
-            <button id="previous"><-</button>
+            <button id="previous">←</button>
         <span class="selector-text">Page Selectors</span>
         <div class="next-btn-container">
-            <button id="next">-></button>
+            <button id="next">→</button>
         </div>
         </div>
     </div>
