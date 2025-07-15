@@ -7,7 +7,9 @@ body {
     margin: 0 auto;
     height: 100vh;
     background-color: #0d1b2a;
-    background-image: url("/assets/skyBackground.png");
+    background-image: url("/assets/backgrounds/cafe.PNG");
+    background-size: contain;
+    background-position: center center;
     color: #0f0f1b;
 }
 
