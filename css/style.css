@@ -48,6 +48,11 @@
 
 body {
     margin: 0!important;
+    background-image: url("/assets/backgrounds/cafe.PNG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1000;
 }
 
 #title {
@@ -87,6 +92,17 @@ body {
 .ingredient {
     height: 70px;
     width: 70px;
+    background-color: #2e2a44;
+    border: 2px solid #fdd276;
+    border-radius: 8px;
+    image-rendering: pixelated;
+    background-size: contain;
+    color: white;
+}
+
+.ingredient:hover {
+    border-color: #d885a3;
+    background-color: #3e385e
 }
 
 /* Entire mixing station block */
@@ -133,6 +149,7 @@ body {
 /* Drink output */
 .drink-slot-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -149,6 +166,25 @@ body {
     width: 60px;
     border-radius: 50%;
     border: 2px solid orange;
+    gap: 8px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.preview{
+    opacity: 0.5;
+}
+.drink-icon {
+    width: 64px;
+    height: 64px;
+    image-rendering: pixelated;
+    object-fit: contain;
+}
+
+.drink-name {
+    margin-top: 8px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
 }
 
 /* Bottom row of functional buttons */
@@ -326,13 +362,36 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 40%;
+    width: 64px;
+    height: 64px;
     margin: 10px auto 10px auto;
-    background-color: orange;
-    border: 2px solid black;
+    background-color: #2e2a44;
+    border: 2px solid #fdd276;
     border-radius: 16px;
+    overflow: hidden;
+}
+
+/* drink-icons */
+/* .drink {
+    width: 16px !important; 
+    height: 16px !important;
+    background-image: url("/assets/drinks.png") !important;
+    background-size: auto !important;
+    background-repeat: no-repeat !important;
+    image-rendering: pixelated !important;
+    z-index: 1;
+    transform: scale(1);
+    transform-origin: top left;
+    margin-left: -16px;
+    margin-top: -16px;
+} */
+
+.drink-icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+    object-fit: contain;
 }
 
 .page-selectors {
@@ -399,27 +458,3 @@ body {
 #hamburger-menu:checked ~ .recipe-dropdown-container {
     display: flex;
 }
-
-/* drink-icons */
-.drink {
-    width: 32px;
-    height: 32px;
-    background-image: url("/assets/drinks.png");
-    background-size: auto;
-    background-repeat: no-repeat;
-    image-rendering: pixelated;
-}
-
-.drink.cream-white { background-position: 0px -32px; }
-
-.drink.red { background-position: 0px 0px; }
-
-.drink.black { background-position: -96px 0px; }
-
-.drink.brown { background-position: -32px -32px; }
-
-.drink.green { background-position: -160px -32px; }
-
-.drink.pink { background-position: -160px 0px; }
-
-.drink.mystery { background-position: -128px -32px; }

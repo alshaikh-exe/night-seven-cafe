@@ -31,40 +31,40 @@
          <div class="left-segment">
    <div class="ingredients-list">
        
-           <button class="ingredient" id="milk">milk</button>
-      
-       
            <button class="ingredient" id="oat-milk">oat milk</button>
       
+       
+           <button class="ingredient" id="charcoal">charcoal</button>
+      
         
-           <button class="ingredient" id="black-tea">black tea</button>
+           <button class="ingredient" id="rosewater">rosewater</button>
 
 
            <button class="ingredient" id="matcha">matcha</button>
        
 
-           <button class="ingredient" id="espresso">espresso</button>
+           <button class="ingredient" id="lavender">lavender</button>
        
         
-           <button class="ingredient" id="honey">honey</button>
+           <button class="ingredient" id="mint">mint</button>
        
         
-           <button class="ingredient" id="peach">peach</button>
+           <button class="ingredient" id="jasmine">jasmine</button>
       
        
-           <button class="ingredient" id="lavender">lavender</button>
+           <button class="ingredient" id="sakura">sakura</button>
        
   
            <button class="ingredient" id="vanilla">vanilla</button>
 
        
-           <button class="ingredient" id="mint">mint</button>
-       
-        
            <button class="ingredient" id="cinnamon">cinnamon</button>
        
+        
+           <button class="ingredient" id="honeycomb">honeycomb</button>
        
-           <button class="ingredient" id="charcoal">charcoal</button>
+       
+           <button class="ingredient" id="licorice-root">licorice-root</button>
     
        
    </div>
@@ -90,8 +90,10 @@
        </div>
 
        <div class="drink-slot-container">
-       <div id="drink-slot">drink</div>
+       <div class="drink-slot" id="drink-slot">drink
+       <!-- icon should be inserted here (JS) -->
        </div>
+       <p class="drink-name" id="drink-name"></p>
        </div>
 
        <!-- Mixing Station Buttons -->
@@ -102,7 +104,7 @@
            </div>
            </div>
        </div>
-
+       </div>
    
     <div class="right-segment">
 
@@ -120,8 +122,9 @@
 
         <h3 class="dropdown-drink-name">Drink</h3>
 
-        <div class="dropdown-drink-icon">pic</div>
-
+        <div class="dropdown-drink-icon">
+        <img id="dropdown-drink-icon" class="drink-icon" src="/assets/drinks/mystery.png" alt = "Drink icon">
+        </div>
         <h4 class="mood">mood</h4>
 
         <div class="dropdown-drink-description">content</div>

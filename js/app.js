@@ -48,6 +48,8 @@ const ingredients = document.querySelectorAll(".ingredient");
 
 const drinkSlot = document.querySelector("#drink-slot");
 
+const drinkSlotName = document.querySelector("#drink-name")
+
 const customer = document.querySelector("#customer");
 
 const customerName = document.querySelector("#customer-name");
@@ -62,7 +64,7 @@ const intuitionBar = document.querySelector(".intuition-bar-blocks");
 
 const drinkGuideName = document.querySelector(".dropdown-drink-name");
 
-const drinkGuideIcon = document.querySelector(".dropdown-drink-icon");
+const drinkGuideIcon = document.querySelector("#dropdown-drink-icon");
 
 const drinkGuideMood = document.querySelector(".mood");
 
@@ -82,7 +84,7 @@ const retryButton = document.querySelector("#result-retry");
 
 const resetButton = document.querySelector("#reset");
 
-
+drinkSlotName.textCentent=""
 /*----------------------------- Event Listeners -----------------------------*/
 ingredients.forEach((ingredient) => {
     ingredient.addEventListener("click", () => {
@@ -149,7 +151,7 @@ function displayNightProgress() {
 
 function handleMix() {
 
-    drinkSlot.innerText = "";
+    drinkSlot.innerHTML= "";
     const sortedCurrentMixingIngredients = [...currentMixingIngredients].sort();
 
     for (const drink of drinks) {
@@ -158,22 +160,26 @@ function handleMix() {
         if (String(sortedCurrentMixingIngredients) === String(sortedIngredients)) {
             drinkName = drink.name;
 
-            const iconEl = document.createElement("div");
-            iconEl.classList.add("drink");
-            iconEl.classList.add(drink.icon);
-
-            const nameEl = document.createElement("p");
-            nameEl.textContent = drink.name;
-
+            const iconEl = document.createElement("img");
+            iconEl.src = `/assets/drinks/${drink.icon}.png`;
+            iconEl.alt = `${drink.name} icon`;
+            iconEl.classList.add("drink-icon");
+            iconEl.classList.remove("preview");
+            drinkSlotName.classList.remove("preview");
+            drinkSlotName.textContent= drink.name;
+           
             drinkSlot.appendChild(iconEl);
-            drinkSlot.appendChild(nameEl);
+           // drinkSlot.appendChild(nameEl);
 
             drinkReady = true;
             break;
         }
     }
         if (!drinkReady) {
-        drinkSlot.innerText = "Mystery Drink"; 
+        drinkSlot.innerHTML = 
+        `<img src="/assets/drinks/mystery.png" alt="Mystery Drink" class="drink-icon" />
+        
+        `;
         drinkReady = true;
         }
 
@@ -219,11 +225,15 @@ function handleServe() {
     iconEl.classList.add("mystery");
    }
 
-   const nameEl = document.createElement("p");
-   nameEl.textContent = drinkName || "Mystery Drink";
+//    const nameEl = document.createElement("p");
+//    nameEl.textContent = drinkName || "Mystery Drink";
 
    drinkSlot.appendChild(iconEl);
-   drinkSlot.appendChild(nameEl);
+//    drinkSlot.appendChild(nameEl);
+
+   // Debugging
+   console.log(`drink icon added: ${iconEl.className}`);
+   console.log(`drink slot now contains: ${drinkSlot.innerHTML}`);
 
 
     if (drinkName === currentCustomer.drink) {
@@ -247,6 +257,7 @@ function handleServe() {
         console.log(`You served the customer a ${drinkName} which is the wrong drink!`);
     }
 
+    drinkSlotName.textContent="";
     customersLeft--;
     displayNightProgress();
     drinkReady = false;
@@ -267,12 +278,24 @@ function previewDrink() {
     const sortedIngredients = [...drink.ingredients].sort();
 
         if (String(sortedCurrentMixingIngredients) === String(sortedIngredients)) {
-            drinkSlot.innerText = drink.name;
+            const iconEl = document.createElement("img");
+            iconEl.src = `/assets/drinks/${drink.icon}.png`;
+            iconEl.alt = `${drink.name} icon`;
+            iconEl.classList.add("drink-icon","preview");
+            drinkSlot.appendChild(iconEl);
+            drinkSlotName.classList.add("preview")
+            drinkSlotName.textContent= drink.name;
             return;
         }
     }
-    
-    drinkSlot.innerText = "Mystery Drink";
+    const mysteryIcon = document.createElement("img");
+    mysteryIcon.src = `/assets/drinks/mystery.png`;
+    mysteryIcon.alt = "Mystery Drink Icon";
+    mysteryIcon.classList.add("drink-icon", "preview");
+
+    drinkSlot.appendChild(mysteryIcon);
+    drinkSlotName.textContent= "Mystery Drink";
+    drinkSlotName.classList.add("preview");
 };
 
 function displayCustomer() {
@@ -395,10 +418,18 @@ intuition  = Math.floor((Math.random() * 6) + 1);
 
 function displayDropdownGuide(currentIndex) {
     if (currentIndex >= 0 && currentIndex < drinkGuide.length) {
-        drinkGuideName.innerText = drinkGuide[currentIndex].drink;
-        drinkGuideIcon.innerText = drinkGuide[currentIndex].icon;
-        drinkGuideMood.innerText = drinkGuide[currentIndex].customerMood;
-        drinkGuideContent.innerText = drinkGuide[currentIndex].recipe;
+
+        const guideDrink = drinkGuide[currentIndex];
+
+
+        const drinkImage = document.getElementById("dropdown-drink-icon");
+        drinkImage.src = `/assets/drinks/${guideDrink.icon}.png`;
+        drinkImage.alt = `${guideDrink.drink} icon`;
+        drinkImage.classList.add("drink-icon")
+
+        drinkGuideName.innerText = guideDrink.drink;
+        drinkGuideMood.innerText = guideDrink.customerMood;
+        drinkGuideContent.innerText = guideDrink.recipe;
     }
 };
 

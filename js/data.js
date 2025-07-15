@@ -1,33 +1,33 @@
 
 const drinks = [
     {
-    name: "Lavender Rain",
-    ingredients: ["lavender", "lavender", "black-tea", "milk"],
-    icon: "pink"
+    name: "Moonflower Veil",
+    ingredients: ["lavender", "jasmine", "oat-milk", "rosewater"],
+    icon: "lavender"
     },
     {
-    name: "Honey Bloom",
-    ingredients: ["honey", "honey", "peach", "matcha"],
+    name: "Sunshine Shot",
+    ingredients: ["oat-milk", "vanilla", "honeycomb", "cinnamon"],
     icon: "cream-white"
     },
     {
-    name: "Ember Shot",
-    ingredients: ["espresso", "espresso", "cinnamon", "charcoal"],
-    icon: "red"
-    },
-    {
-    name: "Dream Fog",
-    ingredients: ["oat-milk", "vanilla", "vanilla", "cinnamon"],
+    name: "Ash & Thorns",
+    ingredients: ["cinnamon", "licorice-root", "rosewater", "charcoal"],
     icon: "brown"
     },
     {
-    name: "Stardust Cloud",
-    ingredients: ["matcha", "vanilla", "oat-milk", "honey"],
+    name: "Floral Garden",
+    ingredients: ["sakura", "rosewater", "mint", "honeycomb"],
+    icon: "pink"
+    },
+    {
+    name: "Midnight Ember",
+    ingredients: ["charcoal", "cinnamon", "matcha", "mint"],
     icon: "black"
     },
     {
-    name: "Mint Revival",
-    ingredients: ["mint", "black-tea", "charcoal", "mint"],
+    name: "Bitter Comfort",
+    ingredients: ["mint", "matcha", "lavender", "licorice-root"],
     icon: "green"
     }
 ];
@@ -37,7 +37,7 @@ const customers = [
         name: "Zoe",
         mood: "happy",
         type: "person",
-        drink: "Honey Bloom",
+        drink: "Sunshine Shot",
         lowIntuition: "...",
         medIntuition: "I don't want this to end!",
         highIntuition: "I'm in the best mood today!",
@@ -48,7 +48,7 @@ const customers = [
         name: "Alex",
         mood: "sad",
         type: "person",
-        drink: "Lavender Rain",
+        drink: "Moonflower Veil",
         lowIntuition: "...",
         medIntuition: "Everything feels a bit... dim.",
         highIntuition: "I feel so down.",
@@ -59,7 +59,7 @@ const customers = [
         name: "Quinn",
         mood: "angry",
         type: "person",
-        drink: "Ember Shot",
+        drink: "Ash & Thorns",
         lowIntuition: "...",
         medIntuition: "Everything's going wrong!",
         highIntuition: "I'm furious and I don't know what to do with it!",
@@ -70,7 +70,7 @@ const customers = [
         name: "Jack",
         mood: "fearful",
         type: "person",
-        drink: "Dream Fog",
+        drink: "Floral Garden",
         lowIntuition: "...",
         medIntuition: "It's been hard to breathe lately.",
         highIntuition: "I'm feeling anxious and I need to relax.",
@@ -81,7 +81,7 @@ const customers = [
         name: "Jessica",
         mood: "disgusted",
         type: "person",
-        drink: "Mint Revival",
+        drink: "Bitter Comfort",
         lowIntuition: "...",
         medIntuition: "Everything is just so... ugh.",
         highIntuition: "I need to feel like a bubble bath.",
@@ -92,7 +92,7 @@ const customers = [
         name: "Ryan",
         mood: "surprised",
         type: "person",
-        drink: "Stardust Cloud",
+        drink: "Midnight Ember",
         lowIntuition: "...",
         medIntuition: "Today's been interesting to say the least.",
         highIntuition: "Throw something wild at me I'm here for it!",
@@ -103,7 +103,7 @@ const customers = [
         name: "Abood",
         mood: "surprised",
         type: "person",
-        drink: "Stardust Cloud",
+        drink: "Midnight Ember",
         lowIntuition: "...",
         medIntuition: "I didn't expect today to go the way it did.",
         highIntuition: "I'm ready for anything, shock me!",
@@ -114,7 +114,7 @@ const customers = [
         name: "Hussain",
         mood: "happy",
         type: "person",
-        drink: "Honey Bloom",
+        drink: "Sunshine Shot",
         lowIntuition: "...",
         medIntuition: "Isn't the world sunshine & rainbows?",
         highIntuition: "I've been smiling for an hour now.",
@@ -125,7 +125,7 @@ const customers = [
         name: "Ali",
         mood: "sad",
         type: "person",
-        drink: "Lavender Rain",
+        drink: "Moonflower Veil",
         lowIntuition: "...",
         medIntuition: "I feel so cold and distant...",
         highIntuition: "Throw something wild at me I'm here for it!",
@@ -136,7 +136,7 @@ const customers = [
         name: "Fatima",
         mood: "disgusted",
         type: "person",
-        drink: "Mint Revival",
+        drink: "Bitter Comfort",
         lowIntuition: "...",
         medIntuition: "I need something... refreshing.",
         highIntuition: "I need something to cleanse my palette!",
@@ -147,7 +147,7 @@ const customers = [
         name: "Zainab",
         mood: "angry",
         type: "person",
-        drink: "Ember Shot",
+        drink: "Ash & Thorns",
         lowIntuition: "...",
         medIntuition: "do not speak to me.",
         highIntuition: "I hate everything and everyone!",
@@ -158,40 +158,40 @@ const customers = [
 
 const drinkGuide = [
     {
-        drink: "Honey Bloom",
-        customerMood: "happy",
+        drink: "Sunshine Shot",
+        customerMood: "Works best for happy customers",
         icon: "cream-white",
-        recipe: "2 of honey, 1 of peach & 1 of matcha",
+        recipe: "1x Oat Milk, 1x Vanilla, 1x Honeycomb & 1x Cinnamon ",
     },
     {
-        drink: "Lavender Rain",
-        customerMood: "sad",
-        icon: "pink",
-        recipe: "2 of lavender, 1 of black tea & 1 of milk",
+        drink: "Moonflower Veil",
+        customerMood: "Works best for sad customers",
+        icon: "lavender",
+        recipe: "1x Lavender, 1x Jasmine, 1x Oat-milk & 1x Rosewater",
     },
     {
-        drink: "Ember Shot",
-        customerMood: "angry",
-        icon: "red",
-        recipe: "2 of espresso, 1 of cinnamon & 1 of charcoal",
-    },
-    {
-        drink: "Dream Fog",
-        customerMood: "fearful",
+        drink: "Ash & Thorns",
+        customerMood: "Works best for angry customers",
         icon: "brown",
-        recipe: "1 of oat milk, 2 of vanilla & 1 of cinnamon",
+        recipe: "1x Charcoal, 1x Cinnamon, 1x Licorice Root & 1x Rosewater",
     },
     {
-        drink: "Mint Revival",
-        customerMood: "disgusted",
+        drink: "Floral Garden",
+        customerMood: "Works best for fearful customers",
+        icon: "pink",
+        recipe: "1x Sakura, 1x Rosewater, 1x Mint & 1x Honeycomb",
+    },
+    {
+        drink: "Bitter Comfort",
+        customerMood: "Works best for disgusted customers",
         icon: "green",
-        recipe: "2 of mint, 1 of black tea & 1 of charcoal",
+        recipe: "1x Matcha, 1x Matcha, 1x Licorice Root & 1x Lavender",
     },
     {
-        drink: "Stardust Cloud",
-        customerMood: "surprised",
+        drink: "Midnight Ember",
+        customerMood: "Works best for surprised customers",
         icon: "black",
-        recipe: "1 of matcha, 1 of oat milk, 1 of vanilla & 1 of honey",
+        recipe: "1x Charcoal, 1x Cinnamon, 1x Matcha & 1x Mint"
     }
 ];
 
