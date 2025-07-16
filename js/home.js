@@ -15,5 +15,14 @@ tutorialExit.addEventListener("click", () => {
 const homeMusic = new Audio("/assets/sounds/home.mp3");
 homeMusic.currentTime = 0;
 homeMusic.volume = 0.8;
-homeMusic.loop = true;
-homeMusic.play();
+
+document.addEventListener("click", playHomeMusic);
+
+function playHomeMusic() {
+  homeMusic.play();
+  document.removeEventListener("click", playHomeMusic());
+}
+
+
+
+
