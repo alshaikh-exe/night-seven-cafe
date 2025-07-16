@@ -1,7 +1,7 @@
-# Night Seven Café 🌙  
+# Night Seven Café Game 🌙  
 *"In a fading world, a small café stays open. You keep it alive."*
 
-**[Night Seven Café](https://night-seven-cafe.surge.sh/)** is a pixel-art, narrative-driven drink-making game where you run a quiet café that serves both the living and the haunted. Over seven nights, you interact with moody, emotionally complex customers with some feeling joyful, some feeling broken and you must match handcrafted drinks to their hidden feelings.
+**[Night Seven](https://night-seven-cafe.surge.sh/)** is a pixel-art, narrative-driven drink-making game where you run a quiet café that serves both the living and the haunted. Over seven nights, you interact with moody, emotionally complex customers with some feeling joyful, some feeling broken and you must match handcrafted drinks to their hidden feelings.
 
 Gameplay is a blend of emotional storytelling, drink-matching, and dice-based stat modifiers that affect your every night.
 
@@ -92,7 +92,7 @@ For my first full project, I wanted to challenge myself not just technically, bu
 
 Thank you for playing & supporting me!
 
-*Special thanks to: **[Husain Folath]** (https://github.com/husain-folath) for invaluable help debugging logic errors, offering constant encouragement, and believing in the vision from start to finish!*
+*Special thanks to: **[Husain Folath]**(https://github.com/husain-folath) for invaluable help debugging logic errors, offering constant encouragement, and believing in the vision from start to finish!*
 
 ## Attributions 🎥
 
