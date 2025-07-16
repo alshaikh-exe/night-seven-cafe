@@ -92,7 +92,7 @@ For my first full project, I wanted to challenge myself not just technically, bu
 
 Thank you for playing & supporting me!
 
-*Special thanks to*: *[Husain Folath](https://github.com/husain-folath)* for invaluable help debugging logic errors, offering constant encouragement, and believing in the vision from start to finish!
+*Special thanks to: **[Husain Folath]** (https://github.com/husain-folath) for invaluable help debugging logic errors, offering constant encouragement, and believing in the vision from start to finish!*
 
 ## Attributions 🎥
 
@@ -100,7 +100,7 @@ Thank you for playing & supporting me!
 
 ### Coding
 
-**HTML segmented layout** adapted from: [Pedram, 2022](https://stackoverflow.com/questions/36662712/how-do-i-divide-a-page-in-three-vertical-sections) 
+**HTML segmented layout** adapted from: [Pedram](https://stackoverflow.com/questions/36662712/how-do-i-divide-a-page-in-three-vertical-sections) 
 
 **CSS pixel-art techniques** supported by: [Irvin Zhan](https://www.subframe.com/tips/css-pixel-art-examples), [Paulie_d](https://stackoverflow.com/questions/61771309/pixel-art-style-border-on-tumblr-theme) 
 
