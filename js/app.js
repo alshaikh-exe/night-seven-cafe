@@ -6,6 +6,7 @@ const finaleMusic = new Audio("/assets/sounds/finale.mp3");
 
 const customerArrival = new Audio("/assets/sounds/customer.wav");
 const ingredientAdded = new Audio("/assets/sounds/ingredient.mp3");
+const drinkMixed = new Audio("/assets/sounds/drink.mp3");
 const nightEnd = new Audio("/assets/sounds/result.wav");
 
 gameMusic.currentTime = 0;
@@ -241,6 +242,8 @@ function handleMix() {
         drinkReady = true;
         }
 
+        drinkMixed.play();
+        
     for (let i = 0; i < mixingIngredients.length; i++) {
         mixingIngredients[i].innerText= "";
     }
