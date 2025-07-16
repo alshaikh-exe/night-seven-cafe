@@ -151,15 +151,9 @@ ingredients.forEach((ingredient) => {
             }
         }
 
-        // for (let i = 0; i < 4; i++) {
-        //     mixingIngredients[i].innerText = currentMixingIngredients[i] || "";
-        // }
-
         if (currentMixingIngredients.length === 4) {
             previewDrink();
         }
-
-        console.log(`current mix: ${currentMixingIngredients}`);
     });
 });
 
@@ -187,6 +181,7 @@ exitButton.addEventListener("click", () => {
     window.location.href = "index.html";
 });
 
+
 /*-------------------------------- Functions --------------------------------*/
 function startNight() {
 
@@ -203,10 +198,6 @@ function startNight() {
     rollDice();
     displayNightProgress();
     displayNewCustomer();
-
-    console.log(`You rolled a ${energy} for energy!`);
-    console.log(`You rolled a ${charm} for charm!`);
-    console.log(`You rolled a ${intuition} for intuition!`);
 }
 
 function displayNightProgress() {
@@ -215,6 +206,10 @@ function displayNightProgress() {
 }
 
 function handleMix() {
+
+    if(currentMixingIngredients.length < 4) {
+        return;
+    }
 
     drinkSlot.innerHTML= "";
     const sortedCurrentMixingIngredients = [...currentMixingIngredients].sort();
@@ -234,7 +229,6 @@ function handleMix() {
             drinkSlotName.textContent= drink.name;
            
             drinkSlot.appendChild(iconEl);
-           // drinkSlot.appendChild(nameEl);
 
             drinkReady = true;
             break;
@@ -243,7 +237,6 @@ function handleMix() {
         if (!drinkReady) {
         drinkSlot.innerHTML = 
         `<img src="/assets/drinks/mystery.png" alt="Mystery Drink" class="drink-icon" />
-        
         `;
         drinkReady = true;
         }
@@ -266,7 +259,6 @@ function handleClear() {
 function handleServe() {
 
     if (!drinkReady) {
-        console.log("You need to mix the drink first!");
         return;
     } 
 
@@ -305,12 +297,10 @@ function handleServe() {
         }
 
         runTypewriter(currentCustomer.success);
-        console.log(`You served a ${drinkName} which is the right drink!`);
     }
 
     else {
         runTypewriter(currentCustomer.fail);
-        console.log(`You served the customer a ${drinkName} which is the wrong drink!`);
     }
 
     drinkSlotName.textContent = "";
@@ -326,7 +316,7 @@ function handleServe() {
     else {
         checkNightStatus();
     }
-}, 3500);
+}, 4000);
 }
 
 
@@ -528,7 +518,6 @@ function nextPage() {
         displayDropdownGuide(currentIndex);
         }
         else {
-            console.log("You are at the end of the recipe book!")
         }
     });
 };
@@ -539,15 +528,11 @@ function previouspage() {
         currentIndex -= 1;
         displayDropdownGuide(currentIndex);
         }
-        else {
-            console.log("You are at the start of the recipe book!")
-        }
         });
 };
 
 function checkNightStatus() {
     const target = pointsRequired[night - 1];
-    console.log(`Checking status, Points: ${points}, Target: ${pointsRequired}`);
     if (points >= target) {
         displayResultScreen("success");
     }
@@ -609,10 +594,7 @@ function resetGame() {
 }
 
 startNight();
-
-
 displayDropdownGuide(currentIndex);
-
 nextPage();
 previouspage();
 
