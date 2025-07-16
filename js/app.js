@@ -1,5 +1,24 @@
 import {drinks, customers, drinkGuide} from "./data.js";
 
+/*-------------------------------- Audio --------------------------------*/
+const gameMusic = new Audio("/assets/sounds/background.mp3");
+const finaleMusic = new Audio("/assets/sounds/finale.mp3");
+
+const btnClick = new Audio("/assets/sounds/click.mp3");
+const customerArrival = new Audio("/assets/sounds/customer.wav");
+const ingredientAdded = new Audio("/assets/sounds/ingredient.mp3");
+const nightEnd = new Audio("/assets/sounds/result.wav");
+
+gameMusic.currentTime = 0;
+gameMusic.volume = 0.3;
+gameMusic.loop = true;
+
+finaleMusic.volume = 0.3;
+finaleMusic.currentTime = 0;
+finaleMusic.loop = true;
+
+
+
 /*-------------------------------- Variables --------------------------------*/
 let currentMixingIngredients = [];
 
@@ -86,6 +105,8 @@ const resetButton = document.querySelector("#reset");
 
 const exitButton = document.querySelector("#exit");
 
+const allButtons = document.querySelectorAll(".button")
+
 drinkSlotName.textContent = "";
 
 
@@ -96,6 +117,11 @@ ingredients.forEach((ingredient) => {
         const ingredientName = ingredient.id;
 
         currentMixingIngredients.unshift(ingredientName);
+
+        ingredientAdded.currentTime = 0;
+        ingredientAdded.play();
+
+
         if (currentMixingIngredients.length > 4) {
             currentMixingIngredients.pop();
         }
@@ -165,9 +191,22 @@ exitButton.addEventListener("click", () => {
     window.location.href = "index.html";
 });
 
+allButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        btnClick.currentTime = 0;
+        btnClick.play();
+    })
+})
 
 /*-------------------------------- Functions --------------------------------*/
 function startNight() {
+
+    if (night === 7) {
+        finaleMusic.play();
+    }
+    else {
+        gameMusic.play();
+    }
     points = 0;
     drinkReady = false;
     servedCustomers = [];
@@ -335,6 +374,9 @@ function previewDrink() {
 function displayCustomer() {
     customerName.innerText = currentCustomer.name;
     customerPortrait.src = currentCustomer.portrait;
+
+    customerArrival.currentTime = 0;
+    customerArrival.play();
 
     if (!currentCustomer || !currentCustomer.name || !currentCustomer.portrait) return;
 
@@ -528,6 +570,9 @@ function checkNightStatus() {
 function displayResultScreen(status) {
     
     resultScreen.classList.remove("hidden");
+
+    nightEnd.currentTime = 0;
+    nightEnd.play();
 
 if (status === "success") {
     if (night === maxNights) {
