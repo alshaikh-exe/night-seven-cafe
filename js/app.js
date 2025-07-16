@@ -50,11 +50,11 @@ const drinkSlot = document.querySelector("#drink-slot");
 
 const drinkSlotName = document.querySelector("#drink-name")
 
-const customer = document.querySelector("#customer");
-
 const customerName = document.querySelector("#customer-name");
 
-const dialogue = document.querySelector("#dialogue");
+const customerPortrait = document.querySelector("#customer-portrait");
+
+const dialogueText = document.querySelector("#dialogue-text");
 
 const energyBar = document.querySelector(".energy-bar-blocks");
 
@@ -86,7 +86,9 @@ const resetButton = document.querySelector("#reset");
 
 const exitButton = document.querySelector("#exit");
 
-drinkSlotName.textCentent = "";
+drinkSlotName.textContent = "";
+
+
 /*----------------------------- Event Listeners -----------------------------*/
 ingredients.forEach((ingredient) => {
     ingredient.addEventListener("click", () => {
@@ -160,7 +162,7 @@ retryButton.addEventListener("click", () => {
 resetButton.addEventListener("click", resetGame);
 
 exitButton.addEventListener("click", () => {
-    window.location.href = "home.html";
+    window.location.href = "index.html";
 });
 
 
@@ -260,16 +262,7 @@ function handleServe() {
     iconEl.classList.add("mystery");
    }
 
-//    const nameEl = document.createElement("p");
-//    nameEl.textContent = drinkName || "Mystery Drink";
-
    drinkSlot.appendChild(iconEl);
-//    drinkSlot.appendChild(nameEl);
-
-   // Debugging
-   console.log(`drink icon added: ${iconEl.className}`);
-   console.log(`drink slot now contains: ${drinkSlot.innerHTML}`);
-
 
     if (drinkName === currentCustomer.drink) {
         if (charm < 4)
@@ -283,27 +276,31 @@ function handleServe() {
             points += 3;
         }
 
-        dialogue.innerText = currentCustomer.success;
+        runTypewriter(currentCustomer.success);
         console.log(`You served a ${drinkName} which is the right drink!`);
     }
 
     else {
-        dialogue.innerText = currentCustomer.fail;
+        runTypewriter(currentCustomer.fail);
         console.log(`You served the customer a ${drinkName} which is the wrong drink!`);
     }
 
-    drinkSlotName.textContent="";
+    drinkSlotName.textContent = "";
     customersLeft--;
     displayNightProgress();
     drinkReady = false;
     handleClear();
+
+    setTimeout(() => {
     if (customersLeft > 0) {
         displayNewCustomer();
     }
     else {
         checkNightStatus();
     }
-};
+}, 3500);
+}
+
 
 function previewDrink() {
     drinkSlot.innerHTML = "";
@@ -337,19 +334,42 @@ function previewDrink() {
 
 function displayCustomer() {
     customerName.innerText = currentCustomer.name;
+    customerPortrait.src = currentCustomer.portrait;
+
+    if (!currentCustomer || !currentCustomer.name || !currentCustomer.portrait) return;
+
+      let textToRun = "";
+
     if (customersLeft > 0) {
         if (intuition <=3) {
-            dialogue.innerText = currentCustomer.lowIntuition;
+            textToRun = currentCustomer.lowIntuition;
         }
         else if (intuition >= 4 && intuition < 6) {
-            dialogue.innerText = currentCustomer.medIntuition;
+            textToRun = currentCustomer.medIntuition;
         }
         else {
-            dialogue.innerText = currentCustomer.highIntuition;
+            textToRun = currentCustomer.highIntuition;
+        }
+
+        if (textToRun) {
+            runTypewriter(textToRun);
+        }
+        else {
+            dialogueText.innerText = "[No dialogue]";
         }
     }
     
 };
+
+function runTypewriter(text) {
+    if (!text || typeof text !== "string") {
+        dialogueText.textContent = "[Dialogue missing]"
+    }
+
+    else {
+        dialogueText.textContent = text;
+    }
+}
 
 function displayNewCustomer() {
 
@@ -532,8 +552,11 @@ function resetGame() {
     charmBar.innerHTML = "";
     intuitionBar.innerHTML = "";
 
-    dialogue.innerText = "";
+    dialogueText.innerText = "";
     drinkSlot.innerText = "";
+    drinkGuideName.textContent = "";
+
+    servedCustomers = [];
 
     if (resultScreen) {
         resultScreen.classList.add("hidden");
