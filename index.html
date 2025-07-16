@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Night Seven Cafe</title>
+    <script defer src="./js/home.js"></script>
     <link rel="stylesheet" href="./css/indexStyle.css">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +15,7 @@
 <div class="home-screen-container pixel-corners">
     <div class="header">
     <h1 id="title">Night Seven</h1>
-    <h3 id="caption">A pixel-art browser game built with HTML, CSS and JavaScript.</h3>
+    <h3 id="caption">"In a fading world, a small café stays open. You keep it alive."</h3>
     </div>
 
     <div class="buttons-container">
@@ -45,6 +46,24 @@
             </button>
     </div>
     </div>
+
+    <div class="hidden" id="tutorial-container">
+        <h2>Game Outline</h2>
+        <img src="/assets/outlines/tutorial.png">
+
+        <div id="tutorial-button-container">
+            <button id="tutorial-exit">EXIT</button>
+        </div>
+
+    </div>
+
+    <div id="device-warning">
+  <div class="device-warning-content pixel-corners">
+    <h2>Night Seven Café</h2>
+    <p>This experience is best played in fullscreen or on a larger screen.</p>
+    <p>Please rotate your device or switch to desktop mode.</p>
+  </div>
+</div>
 
 </body>
 </html>

@@ -13,7 +13,7 @@ body {
     color: #0f0f1b;
 }
 
-.home-screen-container {
+/* .home-screen-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,15 +33,24 @@ body {
     text-align: center;
     font-family: 'Lora', serif;
     z-index: 2;
+} */
+
+.home-screen-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;;
+    justify-content: center;
+    text-align: center;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 175px;
 }
 
 .buttons-container {
@@ -50,10 +59,12 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
+    height: 100%;
     top: 50%;
     left: 50%;
     margin: 0px auto;
     gap: 16px;
+    z-index: 100;
 }
 
 .home-button {
@@ -95,7 +106,7 @@ body {
     font-weight: medium 500;
     font-style: italic;
     color: #e9d8a6;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     line-height: 1.6;
     max-width: 80%;
     margin: 20px auto;
@@ -123,6 +134,7 @@ body {
 
 .home-button {
     position: relative;
+    top: -80px;
     width: 240px;
     height: 64px;
     background: none;
@@ -279,4 +291,113 @@ body {
 .home-button:active .button-shadow {
     transform: translateZ(-5px) translateY(5px);
     transition: transform 0.1s;
+}
+
+#tutorial-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
+    position: fixed;
+    width:100vw;
+    height: 100vh;
+    background-color: rgba(13, 27, 42, 0.95);
+}
+
+#tutorial-container h2 {
+    font-family: "Press Start 2P", monospace;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+}
+
+#tutorial-container img {
+    max-width: 85%;
+    max-height: 70vh;
+    border: 4px solid #f4d58d;
+    box-shadow: 0 0 15px #0000aa;
+    border-radius: 8px;
+}
+
+#tutorial-button-container {
+    margin-top: 20px;
+}
+
+#tutorial-exit {
+  font-family: "Press Start 2P", monospace;
+  background-color: #6a4fa3;
+  color: white;
+  border: 2px solid #f4d58d;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  clip-path: polygon(
+        0% 8px, 4px 8px, 4px 4px, 8px 4px, 8px 0%,
+        calc(100% - 8px) 0%, calc(100% - 8px) 4px, calc(100% - 4px) 4px, calc(100% - 4px) 8px, 100% 8px,
+        100% calc(100% - 8px), calc(100% - 4px) calc(100% - 8px), calc(100% - 4px) calc(100% - 4px), calc(100% - 8px) calc(100% - 4px), calc(100% - 8px) 100%,
+        8px 100%, 8px calc(100% - 4px), 4px calc(100% - 4px), 4px calc(100% - 8px), 0% calc(100% - 8px)
+    );
+    margin-top: 30px;
+}
+
+#tutorial-exit:hover {
+  background-color: #f4d58d;
+  color: #0d1b2a;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+#device-warning {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0d1b2a;
+  background-image: url('/assets/backgrounds/cafe.PNG');
+  background-size: cover;
+  background-position: center;
+  color: #f4d58d;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.device-warning-content {
+  margin: auto;
+  margin-top: 20vh;
+  max-width: 90%;
+  background-color: #1f1b2e;
+  border: 4px solid #e9d8a6;
+  padding: 2rem;
+  text-shadow: 1px 1px 2px #000;
+  clip-path: polygon(
+      0% 8px, 4px 8px, 4px 4px, 8px 4px, 8px 0%,
+      calc(100% - 8px) 0%, calc(100% - 8px) 4px, calc(100% - 4px) 4px, calc(100% - 4px) 8px, 100% 8px,
+      100% calc(100% - 8px), calc(100% - 4px) calc(100% - 8px), calc(100% - 4px) calc(100% - 4px), calc(100% - 8px) calc(100% - 4px), calc(100% - 8px) 100%,
+      8px 100%, 8px calc(100% - 4px), 4px calc(100% - 4px), 4px calc(100% - 8px), 0% calc(100% - 8px))
+}
+
+@media (max-width: 900px) {
+  body > *:not(#device-warning) {
+    display: none !important;
+  }
+
+  #device-warning {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
