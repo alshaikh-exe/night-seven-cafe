@@ -12,7 +12,7 @@ Gameplay is a blend of emotional storytelling, drink-matching, and dice-based st
 Each night, a handful of strangers wander into your haunted little café. Your job? Read between the lines, listen with care, and serve them a drink that speaks to their soul.  
 But beware, for on certain nights, the ghosts who arrive aren’t here for drinks... they're here for answers. And they all remember what you did.
 
-<img width="1470" height="796" alt="Screenshot 2025-07-16 at 11 15 02 pm" src="https://github.com/user-attachments/assets/017bbeaa-2be8-40c9-b41b-8daadae6f093" />
+<img width="1470" height="797" alt="Screenshot 2025-07-16 at 11 16 48 pm" src="https://github.com/user-attachments/assets/2b3ad8e1-c30b-481f-8487-5aaff1457803" />
 
 ### Gameplay Modifiers: The Three Dice 🎲
 
