@@ -25,7 +25,7 @@ body {
     max-width: 700px;
     height: 70vh;
     background-color: #0a0939; 
-    border: 6px solid #e9d8a6; 
+    border: 6px solid white; 
     border-radius: 12px;
     box-shadow:
     0 0 0 10px #5c5470,        
@@ -33,38 +33,6 @@ body {
     text-align: center;
     font-family: 'Lora', serif;
     z-index: 2;
-}
-
-.home-screen-container::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(0,0,0,0.15));
-    pointer-events: none;
-    z-index: 1;
-}
-
-.home-screen-container::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: repeating-linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.02),
-    rgba(255,255,255,0.02) 1px,
-    transparent 1px,
-    transparent 3px
-    );
-    pointer-events: none;
-    z-index: 2;
-}
-
-.home-screen-container:hover {
-    box-shadow:
-    0 0 10px #706caa,
-    0 0 20px #706caa;
 }
 
 .header {
@@ -102,10 +70,6 @@ body {
     clip-path: inherit;
 }
 
-.home-button:hover { /* Add effect here */
-    color: rgb(12, 229, 222);
-}
-
 #title {
     font-family: "Press Start 2P", system-ui;
     font-size: 2.5rem;
@@ -116,9 +80,8 @@ body {
     text-shadow: 
     3px 3px #4b1d91,
     5px 5px #8e0f9c,
-    7px 7px #f27b68,
-    9px 9px #f1aa60,
-    11px 11px #2a8c95;
+    7px 7px #7668f29d,
+    9px 9px #78726c;
     margin-bottom: 20px;
     letter-spacing: 1px;
     line-height: 1.5px;
@@ -131,7 +94,7 @@ body {
     font-size: 1.25rem;
     font-weight: medium 500;
     font-style: italic;
-    color: white;
+    color: #e9d8a6;
     margin-bottom: 20px;
     line-height: 1.6;
     max-width: 80%;
@@ -183,8 +146,8 @@ body {
     font-size: 0.75rem;
     text-transform: uppercase;
     color: white;
-    background-color: #2ccedd;
-    border: 2px solid white;
+    background-color: #6a4fa3;
+    border: 2px solid #e9d8a6;
     letter-spacing: 1px;
     backface-visibility: hidden;
     transform-style: preserve-3d;
@@ -207,8 +170,8 @@ body {
     font-size: 0.75rem;
     text-transform: uppercase;
     color: white;
-    background-color: #e30db1;
-    border: 2px solid white;
+    background-color: #5a3f93;
+    border: 2px solid #e9d8a6;
     letter-spacing: 1px;
     backface-visibility: hidden;
     transform-style: preserve-3d;
@@ -231,8 +194,8 @@ body {
     font-size: 0.75rem;
     text-transform: uppercase;
     color: white;
-    background-color: #5f21bc;
-    border: 2px solid white;
+    background-color: #4a2f83;
+    border: 2px solid #e9d8a6;
     letter-spacing: 1px;
     backface-visibility: hidden;
     transform-style: preserve-3d;
@@ -298,8 +261,14 @@ body {
     transform: translateZ(5px) translateY(-5px);
 }
 
+.home-button:hover .home-button-inner {
+    text-shadow: 0 0 3px #f4d58d, 0 0 8px #f4d58d;
+    color: #fff9e6;
+}
+
 .home-button:hover .button-glow {
     opacity: 1;
+    background: linear-gradient(rgba(244, 213, 141, 0.05), rgba(244, 213, 141, 0.3));
 }
 
 .home-button:active {
