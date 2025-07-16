@@ -90,16 +90,23 @@ Thank you for playing!
 
 ## Attributions 🎥
 
-**Game concept, narrative, and code** by: **Abdulla Alshaikh**  
-**HTML segmented layout** adapted from: *Pedram*  
-**CSS pixel-art techniques** supported by: *Irvin Zhan* and *Paulie_D*  
-**Debugging, styling assistance & refinement** by: *ChatGPT*  
+**Game concept, narrative, and code** by: **Abdulla Alshaikh**
+
+### Coding
+
+**HTML segmented layout** adapted from: [Pedram, 2022](https://stackoverflow.com/questions/36662712/how-do-i-divide-a-page-in-three-vertical-sections) 
+
+**CSS pixel-art techniques** supported by: [Irvin Zhan](https://www.subframe.com/tips/css-pixel-art-examples), [Paulie_d](https://stackoverflow.com/questions/61771309/pixel-art-style-border-on-tumblr-theme) 
+
 **Syntax references** from: [MDN Web Docs](https://developer.mozilla.org/), [W3Schools](https://www.w3schools.com/)  
-**Pixel border reference**: [Tumblr Theme Discussion](https://stackoverflow.com/questions/61771309/pixel-art-style-border-on-tumblr-theme),   
-**CSS animations reference**: [W3C Working Doc](https://drafts.csswg.org/css-animations/#keyframes)  
+
+**CSS animations reference**: [W3C Working Doc](https://drafts.csswg.org/css-animations/#keyframes)
+
 **Fonts used**: [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P), [Lora](https://fonts.google.com/specimen/Lora)
 
-### 🎨 Assets & Music
+**Debugging, styling assistance & refinement** by: [ChatGPT](https://chatgpt.com/) 
+
+### Assets & Music
 
 **Visual Assets**  
 - Ingredient & drink pixel art include assets from & inspired by: [Yanin](https://yaninyunus.itch.io/16x16-specialtycoffee)
@@ -116,6 +123,3 @@ Thank you for playing!
 - Customer arrival: [Bell Sound – Tetoszka (Freesound)](https://freesound.org/people/Tetoszka/sounds/538013/)  
 - Result screen popup: [Result Sound – CogFireStudios (Freesound)](https://freesound.org/people/CogFireStudios/sounds/619837/)  
 - Win sound effect: [Victory – freesound_community (Pixabay)](https://pixabay.com/sound-effects/game-win-36082/)
-
-
-  
