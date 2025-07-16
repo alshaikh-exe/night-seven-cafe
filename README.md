@@ -22,7 +22,7 @@ At the start of each night, you roll three dice that shape your experience:
 - **Charm 🪄:** How many points you earn per successful order  
 - **Intuition 🔮:** How clear or vague customer moods will be  
 
-These stats reset every night, so stay alert.
+These stats reset every night & are represented by the three bars on the bottom-right corner, so stay alert.
 
 ### Dialogue Clues 🔍
 
