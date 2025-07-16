@@ -26,7 +26,7 @@
 .middle-segment {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* to place things at the bottom */
+    justify-content: flex-end; 
     align-items: center;
     height: 100%;
     width: 50%;
@@ -124,18 +124,7 @@ body {
 
 .pixel-inner {
     z-index: 2;
-    /* text-shadow: 0 0 2px white, 0 0 4px #f1f5f1; */
 }
-
-/* .pixel-glow {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(255,255,255,0), rgba(255,255,255,0.1));
-    opacity: 0;
-    transition: opacity 0.3s;
-    clip-path: inherit;
-} */
 
 .pixel-shadow {
     position: absolute;
@@ -192,7 +181,6 @@ body {
     cursor: pointer;
     height: 70px;
     width: 70px;
-    /* background: url("/assets/backgrounds/slot.png"); */
     background-color: #2e2a44;
     border: 2px solid #fdd276;
     border-radius: 8px;
@@ -246,7 +234,6 @@ body {
     background-color: #3e385e;
 }
 
-/* Entire mixing station block */
 .mixing-station-container {
     display: flex;
     flex-direction: column;
@@ -258,7 +245,7 @@ body {
     right: 0;
     width: 80%;
     margin: 0 auto;
-    box-sizing: border-box; /* will take into account padding in the overall width */
+    box-sizing: border-box; 
     overflow: hidden;
     background-color: #1a172b;
     box-shadow:   
@@ -268,7 +255,6 @@ body {
     0 2px 0 0 #d885a3;
 }
 
-/* Top Row of 4 mixing slots & drink slot */
 .mixing-station-top {
     display: flex;
     flex-direction: row;
@@ -280,7 +266,6 @@ body {
     padding: 20px 0;
 }
 
-/* 4 mixing slots */
 .mixing-slots-container {
     max-width: 200px;
     display: grid;
@@ -332,7 +317,7 @@ body {
     z-index: 3;
 }
 
-/* Drink output */
+
 .drink-slot-container {
     display: flex;
     flex-direction: column;
@@ -393,7 +378,6 @@ body {
     font-size: 14px;
 }
 
-/* Bottom row of functional buttons */
 .mixing-station-btns-container {
     display: flex;
     flex-direction: column;
@@ -499,9 +483,6 @@ body {
   transition: transform 0.1s;
 }
 
-
-/* Customer and their dialogue */
-
 .customer-display-container {
   display: flex;
   justify-content: center;
@@ -603,69 +584,6 @@ body {
     }
 }
 
-/* .customer-display-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    position: relative;
-    width: 100%;
-    border: 2px solid grey;
-    position: relative;
-    height: 330px;
-    margin-bottom: -120px;
-}
-
-.customer-container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-}
-
-#customer {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    justify-content: flex-end;
-    align-items: center;
-    width: 250px;
-    height: auto;
-    border-radius: 50%;
-    filter: drop-shadow(2px 2px 2px #00000088);
-}
-
-#customer-name {
-  font-size: 0.7rem;
-  font-weight: bold;
-  text-shadow: 1px 1px 1px #000;
-  margin-bottom: 6px;
-  color: #fdd276;
-}
-
-#customer-portrait {
-  width: 250px;
-  height: 250px;
-  image-rendering: pixelated;
-  object-fit: contain;
-}
-
-#dialogue {
-    position: absolute;
-    top: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 8px 12px;
-    border-radius: 10px;
-    font-size: 14px;
-    text-align: center;
-    max-width: 200px;
-    box-shadow: 2px 2px 0 black;
-    background-color: white; 
-    z-index: 2; /* layer */
-/* }  
-
-/* Game modifier bars */
 .modifier-bars-container {
     display: flex;
     flex-direction: column;
@@ -748,7 +666,6 @@ body {
     background-color: transparent;
 }
 
-/* Dropdown recipe guide */
 .hamburger-menu-container {
     display: flex;
     flex-direction: column;
@@ -821,7 +738,6 @@ body {
     );
 }
 
-
 .dropdown-drink-name, .dropdown-drink-description {
     width: 100%;
     padding: 8px;
@@ -892,10 +808,7 @@ body {
         8px 100%, 8px calc(100% - 4px), 4px calc(100% - 4px), 4px calc(100% - 8px), 0% calc(100% - 8px)
     );
 }
-    /* padding: 5px 8px;
-    font-size: 10px; */
-
-/* Result screen */
+    
 #result-screen {
     display: flex;
     flex-direction: column;

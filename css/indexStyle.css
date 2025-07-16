@@ -13,28 +13,6 @@ body {
     color: #0f0f1b;
 }
 
-/* .home-screen-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    margin: 5vh auto;
-    padding: 40px;
-    width: 80vw;
-    max-width: 700px;
-    height: 70vh;
-    background-color: #0a0939; 
-    border: 6px solid white; 
-    border-radius: 12px;
-    box-shadow:
-    0 0 0 10px #5c5470,        
-    0 0 20px rgba(0, 0, 0, 0.6); 
-    text-align: center;
-    font-family: 'Lora', serif;
-    z-index: 2;
-} */
-
 .home-screen-container {
     height: 100vh;
     display: flex;
