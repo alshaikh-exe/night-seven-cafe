@@ -54,13 +54,19 @@ body {
 
 #title {
     font-size: 40px;
+    font-family: "Lora", monospace;
     text-align: center;
     margin-bottom: 5px;
+    color: white;
 }
 
 #goal {
+
+    font-family: "Lora", monospace;
+    font-style: italic;
     text-align: center;
     margin: 0 auto;
+    color: rgba(255, 255, 255, 0.609);
 }
 
 .general-btns-container {
@@ -495,19 +501,123 @@ body {
 
 
 /* Customer and their dialogue */
+
 .customer-display-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 350px;
+  margin-bottom: -80px; 
+  position: relative;
+  pointer-events: none; 
+  overflow: visible;
+}
+
+#customer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transform: translateY(-80px);
+}
+
+#customer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+#customer-portrait {
+  width: 250px;
+  height: auto;
+  image-rendering: pixelated;
+  object-fit: contain;
+  z-index: 1;
+}
+
+#customer-name {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #000;
+  margin-top: 8px;
+  position: absolute;
+  top: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fdd276;
+  padding: 2px 8px;
+  border-radius: 4px;
+  z-index: 3;
+  white-space: nowrap;
+}
+
+#dialogue {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -30px;
+  left: 125%;
+  transform: translateX(-50%);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-family: "Lora", serif;
+  text-align: left;
+  max-width: 300px;
+  width: max-content;
+  clip-path: polygon(
+    0% 6px, 3px 6px, 3px 3px, 6px 3px, 6px 0%,
+    calc(100% - 6px) 0%, calc(100% - 6px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 6px, 100% 6px,
+    100% calc(100% - 6px), calc(100% - 3px) calc(100% - 6px), calc(100% - 3px) calc(100% - 3px), calc(100% - 6px) calc(100% - 3px), calc(100% - 6px) 100%,
+    6px 100%, 6px calc(100% - 3px), 3px calc(100% - 3px), 3px calc(100% - 6px), 0% calc(100% - 6px)
+  );
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 black;
+  background-color: white;
+  image-rendering: pixelated;
+  animation: dialogue-pop 0.4s ease-out;
+  z-index: 3;
+  
+}
+
+#dialogue-text {
+    display: block !important;
+    white-space: normal !important;;
+    word-wrap: break-word !important;;
+    max-width: 300px !important;;
+    line-height: 1.4 !important;;
+}
+
+@keyframes dialogue-pop {
+    0% {
+        transform: translateX(-50%) scale(0.6);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* .customer-display-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 90%;
+    align-items: flex-end;
+    position: relative;
+    width: 100%;
     border: 2px solid grey;
     position: relative;
-    height: 250px;
-    margin-bottom: 30px;
+    height: 330px;
+    margin-bottom: -120px;
 }
 
 .customer-container {
     display: flex;
+    flex-direction: column;
     position: relative;
     justify-content: center;
     align-items: center;
@@ -515,29 +625,45 @@ body {
 
 #customer {
     display: flex;
+    flex-direction: column;
     position: relative;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    width: 80px;
-    height: 80px;
-    background: orange;
+    width: 250px;
+    height: auto;
     border-radius: 50%;
-    border: 2px solid green;
-    bottom: -40px;
+    filter: drop-shadow(2px 2px 2px #00000088);
+}
+
+#customer-name {
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #000;
+  margin-bottom: 6px;
+  color: #fdd276;
+}
+
+#customer-portrait {
+  width: 250px;
+  height: 250px;
+  image-rendering: pixelated;
+  object-fit: contain;
 }
 
 #dialogue {
     position: absolute;
-    top: -60px;
-    right: -120px;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 8px 12px;
     border-radius: 10px;
     font-size: 14px;
-    max-width: 160px;
+    text-align: center;
+    max-width: 200px;
     box-shadow: 2px 2px 0 black;
     background-color: white; 
     z-index: 2; /* layer */
-}
+/* }  
 
 /* Game modifier bars */
 .modifier-bars-container {
@@ -694,18 +820,6 @@ body {
         8px 100%, 8px calc(100% - 4px), 4px calc(100% - 4px), 4px calc(100% - 8px), 0% calc(100% - 8px)
     );
 }
-    /* display: flex; */
-    /* flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    padding: 20px;
-    gap: 12px;
-    border-radius: 20px;
-    background-color: rgb(215, 214, 214);
-    text-align: center;
-    margin: 20px auto 20px auto;
-    box-sizing: border-box; */
 
 
 .dropdown-drink-name, .dropdown-drink-description {
@@ -743,21 +857,6 @@ body {
     margin-bottom: 4px;
     text-align: center;
 }
-
-/* drink-icons */
-/* .drink {
-    width: 16px !important; 
-    height: 16px !important;
-    background-image: url("/assets/drinks.png") !important;
-    background-size: auto !important;
-    background-repeat: no-repeat !important;
-    image-rendering: pixelated !important;
-    z-index: 1;
-    transform: scale(1);
-    transform-origin: top left;
-    margin-left: -16px;
-    margin-top: -16px;
-} */
 
 .drink-icon {
     display: block;
@@ -802,8 +901,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: "Lora", monospace;
+    font-size: 40px;
     color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(15, 5, 20, 0.7);
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -817,23 +918,54 @@ body {
 .result-buttons-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 60px;
     margin-top: 1rem;
     width: 235px;
 }
 
 .result-button {
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1rem;
     color: #ffffff;
-    background-color: rgb(83, 38, 104);
+    font-size: 0.9rem;
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    color: white;
+    background-color: #3a4f50;
+    border: 2px solid #f2c2f2;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    clip-path: polygon(
+        0% 8px, 4px 8px, 4px 4px, 8px 4px, 8px 0%,
+        calc(100% - 8px) 0%, calc(100% - 8px) 4px, calc(100% - 4px) 4px, calc(100% - 4px) 8px, 100% 8px,
+        100% calc(100% - 8px), calc(100% - 4px) calc(100% - 8px), calc(100% - 4px) calc(100% - 4px), calc(100% - 8px) calc(100% - 4px), calc(100% - 8px) 100%,
+        8px 100%, 8px calc(100% - 4px), 4px calc(100% - 4px), 4px calc(100% - 8px), 0% calc(100% - 8px)
+    );
+    width: 200px;
+    height: 50px; 
+
 }
 
 .result-button:disabled {
-    background-color: #888;
-    color: #ccc;
-    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.result-button:hover {
+  transform: translateZ(5px) translateY(-5px);
+}
+
+.result-button:hover .mixing-btn-glow {
+  opacity: 1;
+}
+
+.result-button:active {
+  transform: translateZ(0) translateY(0);
+  transition: transform 0.1s;
+}
+
+.result-button:active .mixing-btn-shadow {
+  transform: translateZ(-5px) translateY(5px);
+  transition: transform 0.1s;
 }
 
 .hidden {
