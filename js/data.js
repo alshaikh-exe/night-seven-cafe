@@ -40,7 +40,7 @@ const customers = [
         drink: "Sunshine Shot",
         lowIntuition: "Haha... did you say something? I was just enjoying the air.",
         medIntuition: "Sometimes I pretend the cups can talk. Is that weird?",
-        highIntuition: "I miss my mom. But this place feels like her hugs",
+        highIntuition: "I'm craving grandma's cookies. But this place makes up for it!",
         success: "That's amazing, you always get it right!",
         fail: "It's okay I guess... just not what i was hoping for",
         portrait: "/assets/customers/August.png"
@@ -64,7 +64,7 @@ const customers = [
         drink: "Sunshine Shot",
         lowIntuition: "Darling, you musn't stare. It causes wrinkles",
         medIntuition: "Even beauty fades. But I like the way you see me",
-        highIntuition: "There's a part of me that's still dancing. You noticed her",
+        highIntuition: "There's a part of me that's still young and free. You noticed her.",
         success: "You do know how to spoil a lady.",
         fail: "Oh... that's not quite what I needed, darling.",
         portrait: "assets/customers/Celeste.png"
@@ -90,7 +90,7 @@ const customers = [
         lowIntuition: "Speak up. Or better yet, don't.",
         medIntuition: "The world's a mess. You bringing me tea won't fix it.",
         highIntuition: "What do you know about life? #$*@!.",
-        success: "...You're lucky this worked!",
+        success: "...You're lucky this worked.",
         fail: "This? You call this a drink?",
         portrait: "assets/customers/Dorian.png"
 
@@ -127,7 +127,7 @@ const customers = [
         lowIntuition: "This better not be another basic blend.",
         medIntuition: "I want something sharp. Something that bites back.",
         highIntuition: "I feel gross... can your brew fix that?",
-        success: "You actually impressed me. That's rare",
+        success: "You actually impressed me. That's rare.",
         fail: "Ugh. That made it worse, not better",
         portrait: "assets/customers/Emrys.png"
     },
@@ -174,7 +174,7 @@ const customers = [
         drink: "Floral Garden",
         lowIntuition: "Heh. You think you know me? Adorable.",
         medIntuition: "There are things I've seen that I'll never unsee.",
-        highIntuition: "I feel like going on a long, long, run.",
+        highIntuition: "I need to breathe...",
         success: "Heh... you're good. Scary good.",
         fail: "Sweetheart... not every puzzle fitts, hmm?",
         portrait: "assets/customers/Mara.png"
@@ -184,11 +184,11 @@ const customers = [
         mood: "fearful",
         type: "person",
         drink: "Floral Garden",
-        lowIntuition: "I wanna go home. Do I have to stay here?",
+        lowIntuition: "Um... h-hey...",
         medIntuition: "You're nice. You're not like the people in my dreams.",
         highIntuition: "When I drink warm things, I pretend someone's hugging me.",
         success: "Better than a blanket... I like it.",
-        fail: "It tastes weird. I'm leaving.",
+        fail: "It tastes weird. Won't have that again.",
         portrait: "assets/customers/Noah.png"
     },
     {
