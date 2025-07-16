@@ -526,14 +526,23 @@ function checkNightStatus() {
 };
 
 function displayResultScreen(status) {
-    console.log("Displaying Result Screen...")
-
+    
     resultScreen.classList.remove("hidden");
 
 if (status === "success") {
+    if (night === maxNights) {
+        resultScreen.style.backgroundColor = "rgba(45, 10, 60, 0.85)"
+        message.innerText = "Final Night Complete! Thank you for playing & supporting me!"
+        message.style.color = "#f4d58d";
+        nextButton.style.display = "none";
+        retryButton.innerText = "Play Again?"
+        retryButton.disabled = false;
+    }
+    else {
     message.innerText = `Night ${night} Complete!`;
     nextButton.disabled = false;
     retryButton.disabled = true;
+}
 }
 else {
     message.innerText = "Try Again!";
