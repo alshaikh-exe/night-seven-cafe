@@ -81,6 +81,17 @@ Get it wrong, and your night darkens.
 - **Narrative & Visual Storytelling:** Include short comic panels or illustrated scenes between nights to deepen the café’s lore and emotional resonance.
 - **Desserts & Food Items:** Expand the menu with unique food desserts & food items to add gameplay variety and unlock new combinations.
 
+## Planning Materials 📝
+
+### Home UI-outline
+
+<img width="867" height="498" alt="Screenshot 2025-07-17 at 12 52 29 am" src="https://github.com/user-attachments/assets/1097fedf-ca81-44a8-8e60-f726d7fe127a" />
+
+
+### Game UI-outline
+
+<img width="860" height="498" alt="Screenshot 2025-07-17 at 12 50 14 am" src="https://github.com/user-attachments/assets/8dfdf875-045e-43b2-9f6f-d54fa51f7a61" />
+
 ## Tech Stack 💻 
 
 - HTML
