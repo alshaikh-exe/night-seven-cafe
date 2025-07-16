@@ -85,10 +85,10 @@ Get it wrong, and your night darkens.
 
 ## Developer's note 🖋️
 For my first full project, I wanted to challenge myself not just technically, but creatively and conceptually. **Night Seven** is more than a game; it was my attempt to challenge my logical and functional side by structuring systems and mechanics, My styling and artistic eye by crafting immersive visuals and implementing an aesthetic as well as my visionary nature through committing fully to an idea and bringing it to life. I built this entire experience in just one week. Every pixel, line of code, and story element was driven by the desire to make something meaningful. I look forward to contributing to other projects, building more games, telling more stories, and leaving a mark through the experiences I create.
-*Special thanks to*: *[Husain Folath](https://github.com/husain-folath)* for invaluable help debugging logic errors, offering constant encouragement, and believing in the vision from start to finish!
-
 
 Thank you for playing & supporting me!
+
+*Special thanks to*: *[Husain Folath](https://github.com/husain-folath)* for invaluable help debugging logic errors, offering constant encouragement, and believing in the vision from start to finish!
 
 ## Attributions 🎥
 
