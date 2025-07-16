@@ -4,7 +4,6 @@ import {drinks, customers, drinkGuide} from "./data.js";
 const gameMusic = new Audio("/assets/sounds/background.mp3");
 const finaleMusic = new Audio("/assets/sounds/finale.mp3");
 
-const btnClick = new Audio("/assets/sounds/click.mp3");
 const customerArrival = new Audio("/assets/sounds/customer.wav");
 const ingredientAdded = new Audio("/assets/sounds/ingredient.mp3");
 const nightEnd = new Audio("/assets/sounds/result.wav");
@@ -16,7 +15,6 @@ gameMusic.loop = true;
 finaleMusic.volume = 0.3;
 finaleMusic.currentTime = 0;
 finaleMusic.loop = true;
-
 
 
 /*-------------------------------- Variables --------------------------------*/
@@ -105,8 +103,6 @@ const resetButton = document.querySelector("#reset");
 
 const exitButton = document.querySelector("#exit");
 
-const allButtons = document.querySelectorAll(".button")
-
 drinkSlotName.textContent = "";
 
 
@@ -190,13 +186,6 @@ resetButton.addEventListener("click", resetGame);
 exitButton.addEventListener("click", () => {
     window.location.href = "index.html";
 });
-
-allButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        btnClick.currentTime = 0;
-        btnClick.play();
-    })
-})
 
 /*-------------------------------- Functions --------------------------------*/
 function startNight() {
