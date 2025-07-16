@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Night Seven Café</title>
+   <link rel="stylesheet" href="/css/gameStyle.css">
+   <script type="module" src="./js/data.js"></script>
+   <script type="module" src="./js/app.js"></script>
+   <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <!-- General Functional Buttons -->
+     <div class="container"> 
+        <div class="top-segment">
+    <div class="general-btns-container">
+    <div id="exit-btn-container">
+
+        <button class="pixel-btn" id="exit">
+            <div class="pixel-face">
+                <div class="pixel-inner">EXIT</div>
+                <div class="pixel-glow"></div>
+                </div>
+                <div class="pixel-shadow"></div>
+        </button>
+    </div>
+
+    <div id="reset-btn-container">
+        <button class="pixel-btn" id="reset">
+            <div class="pixel-face">
+                <div class="pixel-inner">RESET</div>
+                <div class="pixel-glow"></div>
+                </div>
+                <div class="pixel-shadow"></div>
+            </button>
+            </div>
+    </div> 
+    
+     <!-- Main Game Trackers -->
+   <h1 id="title">Night: </h1>
+   <h2 id="goal">Goal: </h2>
+   </div>
+     <!-- Ingredients List -->
+      <div class="flexbox">
+         <div class="left-segment">
+   <div class="ingredients-list">
+       
+           <button class="ingredient" id="oat-milk">
+            <img src="/assets/ingredients/oatMilk.png" alt="oat-milk icon">
+            <div class="overlay"></div>
+            <span class="label">Oat-milk</span>
+           </button>
+      
+       
+           <button class="ingredient" id="charcoal">
+            <img src="/assets/ingredients/charcoal.png" alt="charcoal icon">
+            <div class="overlay"></div>
+            <span class="label">Charcoal</span>
+           </button>
+      
+        
+           <button class="ingredient" id="rosewater">
+            <img src="/assets/ingredients/rosewater.png" alt="rosewater icon">
+            <div class="overlay"></div>
+            <span class="label">Rosewater</span>
+           </button>
+
+
+           <button class="ingredient" id="matcha">
+            <img src="/assets/ingredients/matcha.png" alt="matcha icon">
+            <div class="overlay"></div>
+            <span class="label">Matcha</span>
+           </button>
+       
+
+           <button class="ingredient" id="lavender">
+            <img src="/assets/ingredients/lavender.png" alt="lavender icon">
+            <div class="overlay"></div>
+            <span class="label">Lavender</span>
+           </button>
+       
+        
+           <button class="ingredient" id="mint">
+            <img src="/assets/ingredients/mint.png" alt="mint icon">
+            <div class="overlay"></div>
+            <span class="label">Mint</span>
+           </button>
+       
+        
+           <button class="ingredient" id="jasmine">
+            <img src="/assets/ingredients/jasmine.png" alt="jasmine icon">
+            <div class="overlay"></div>
+            <span class="label">Jasmine</span>
+           </button>
+      
+       
+           <button class="ingredient" id="sakura">
+            <img src="/assets/ingredients/sakura.png" alt="sakura icon">
+            <div class="overlay"></div>
+            <span class="label">Sakura</span>
+           </button>
+       
+  
+           <button class="ingredient" id="vanilla">
+            <img src="/assets/ingredients/vanilla.png" alt="vanilla icon">
+            <div class="overlay"></div>
+            <span class="label">Vanilla</span>
+           </button>
+
+       
+           <button class="ingredient" id="cinnamon">
+            <img src="/assets/ingredients/cinnamon.png" alt="cinnamon icon">
+            <div class="overlay"></div>
+            <span class="label">Cinnamon</span>
+           </button>
+       
+        
+           <button class="ingredient" id="honeycomb">
+            <img src="/assets/ingredients/honeycomb.png" alt="honeycomb icon">
+            <div class="overlay"></div>
+            <span class="label">Honeycomb</span>
+           </button>
+       
+       
+           <button class="ingredient" id="licorice-root">
+            <img src="/assets/ingredients/licoriceRoot.png" alt="licorice-root icon">
+            <div class="overlay"></div>
+            <span class="label">Licorice-root</span>
+           </button>
+    
+       
+   </div>
+   </div>
+   <!-- Customers & Orders -->
+    <div class="middle-segment">
+    <div class="customer-display-container">
+        <div id="customer-container">
+        <div id="customer">
+            <img id="customer-portrait" src="" alt="Customer Portrait">
+            <div id="dialogue">
+            <span id="dialogue-text"></span>
+            </div>
+        </div>
+        <span id="customer-name">customer</span>
+        </div>
+        </div>
+        <!-- Mixing Station -->
+   <div class="mixing-station-container">
+    <div class="mixing-station-top">
+    <div class="mixing-slots-container">
+       <div class="mixing-slot" id="first-slot">slot 1</div>
+       <div class="mixing-slot" id="second-slot">slot 2</div>
+       <div class="mixing-slot" id="third-slot">slot 3</div>
+       <div class="mixing-slot" id="fourth-slot">slot 4</div>
+       </div>
+
+       <div class="drink-slot-container">
+       <div class="drink-slot" id="drink-slot">drink
+       <!-- icon should be inserted here (JS) -->
+       </div>
+       <p class="drink-name" id="drink-name"></p>
+       </div>
+
+       <!-- Mixing Station Buttons -->
+       <div class="mixing-station-btns-container">
+        <button class="mixing-btn-pixel" id="mix-btn">
+            <div class="mixing-btn-face pixel-corners">
+                <div class="mixing-btn-inner">MIX</div>
+                <div class="mixing-btn-glow"></div>
+                </div>
+            <div class="mixing-btn-shadow"></div>
+            </button>
+
+        <button class="mixing-btn-pixel" id="clear-btn">
+            <div class="mixing-btn-face pixel-corners">
+                <div class="mixing-btn-inner">CLEAR</div>
+                <div class="mixing-btn-glow"></div>
+                </div>
+                <div class="mixing-btn-shadow"></div>
+             </button>
+
+            <button class="mixing-btn-pixel" id="serve-btn">
+            <div class="mixing-btn-face pixel-corners">
+                <div class="mixing-btn-inner">SERVE</div>
+                <div class="mixing-btn-glow"></div>
+                </div>
+            <div class="mixing-btn-shadow"></div>
+            </button>
+           </div>
+           </div>
+       </div>
+       </div>
+   
+    <div class="right-segment">
+
+    <!-- Hamburger Menu -->
+     <div class="hamburger-menu-container">
+    <input id="hamburger-menu" type="checkbox">
+     <label id="hamburger-icon" for="hamburger-menu">
+     <div class="hamburger-line"></div>
+     <div class="hamburger-line"></div>
+     <div class="hamburger-line"></div>
+     </label>
+
+    <!-- Recipe Guide Dropdown -->
+    <div class="recipe-dropdown-container">
+
+        <h3 class="dropdown-drink-name">Drink</h3>
+
+        <div class="dropdown-drink-icon">
+        <img id="dropdown-drink-icon" class="drink-icon" src="/assets/drinks/mystery.png" alt = "Drink icon">
+        </div>
+        <h4 class="mood">mood</h4>
+
+        <div class="dropdown-drink-description">content</div>
+
+    <!-- Recipe Guide Dropdown Buttons -->
+        <div class="page-selectors">
+            <button id="previous">←</button>
+        <span class="selector-text">Page Selectors</span>
+        <div class="next-btn-container">
+            <button id="next">→</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Game Difficulty Indicator Bars -->
+    <div class="modifier-bars-container">
+
+    <div id="energy-bar">
+        <span class="bar-label">Energy</span>
+        <div class="energy-bar-blocks">
+            <div class="bar-block energy-bar-filled"></div>
+            <div class="bar-block energy-bar-filled"></div>
+            <div class="bar-block energy-bar-filled"></div>
+        </div>
+    </div>
+
+    <div id="charm-bar">
+    <span class="bar-label">Charm</span>
+    <div class="charm-bar-blocks">
+            <div class="bar-block charm-bar-filled"></div>
+            <div class="bar-block charm-bar-filled"></div>
+            <div class="bar-block charm-bar-filled"></div>
+        </div>
+    </div>
+
+    <div id="intuition-bar">
+    <span class="bar-label">Intuition</span>
+    <div class="intuition-bar-blocks">
+            <div class="bar-block intuition-bar-filled"></div>
+            <div class="bar-block intuition-bar-filled"></div>
+            <div class="bar-block intuition-bar-filled"></div>
+    </div>
+   </div>
+   </div>
+
+    </div>
+    </div>
+    </div>
+    
+    <div class="hidden" id="result-screen" >
+        <h2 id="result-message">result-message</h2>
+        <div class="result-buttons-container">
+
+            <div id="result-next-container">
+                <button class="result-button" id="result-next">NEXT NIGHT</button></button>
+            </div>
+
+                <div id="result-retry-container">
+                <button class="result-button" id="result-retry">RETRY</button></button>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
