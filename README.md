@@ -5,10 +5,14 @@
 
 Gameplay is a blend of emotional storytelling, drink-matching, and dice-based stat modifiers that affect your every night.
 
+<img width="1470" height="798" alt="Screenshot 2025-07-16 at 11 13 57 pm" src="https://github.com/user-attachments/assets/216304fd-ff35-42ef-8f97-4344b1bc65e1" />
+
 ## How to Play 🎮 
 **Welcome to the quiet hours of midnight.**  
 Each night, a handful of strangers wander into your haunted little café. Your job? Read between the lines, listen with care, and serve them a drink that speaks to their soul.  
 But beware, for on certain nights, the ghosts who arrive aren’t here for drinks... they're here for answers. And they all remember what you did.
+
+<img width="1470" height="796" alt="Screenshot 2025-07-16 at 11 15 02 pm" src="https://github.com/user-attachments/assets/017bbeaa-2be8-40c9-b41b-8daadae6f093" />
 
 ### Gameplay Modifiers: The Three Dice 🎲
 
