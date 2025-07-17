@@ -103,7 +103,7 @@ For my first full project, I wanted to challenge myself not just technically, bu
 
 Thank you for playing & supporting me!
 
-*Special thanks to: **[Husain Folath]**(https://github.com/husain-folath) for invaluable help debugging logic errors, offering constant encouragement, and believing in the vision from start to finish!*
+*Special thanks to: **[Husain Folath](https://github.com/husain-folath)** for invaluable help debugging logic errors, offering constant encouragement, and believing in the vision from start to finish!*
 
 ## Attributions 🎥
 
